@@ -1,0 +1,73 @@
+a {
+  font-weight: bold;
+  color: black;
+  text-decoration: inherit;
+  list-style: none;
+  height: 2rem;
+}
+a:hover {
+  color: #0015ff;
+  opacity: 0.8;
+  transition: 0.4s;
+}
+li {
+  list-style: none;
+  font-family: var(--main-font-family);
+}
+
+nav {
+  margin-left: -0.5rem;
+  background-color: #ffffff;
+  height: 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  -webkit-box-shadow: 10px 10px 36px -15px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 36px -15px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 36px -15px rgba(0, 0, 0, 0.75);
+}
+
+.navbar {
+  margin-right: 5rem;
+}
+
+ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 3rem;
+  font-size: 1.2rem;
+}
+
+.CC-Logo {
+  max-width: 2.2rem;
+  object-fit: contain;
+}
+
+.Logo-name {
+  font-weight: bold;
+  font-size: 30px;
+  font-family: var(--main-font-family);
+  margin-left: -0.5rem;
+  margin-top: -0.5rem;
+  color: black;
+}
+
+.logo-container {
+  display: flex;
+  margin-left: 2rem;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+@media (max-width: 992px) {
+  a {
+    font-size: 8px;
+  }
+}
