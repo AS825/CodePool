@@ -3,6 +3,6 @@ package com.codecool.backend.model;
 public class HelloWorld {
 
     public String sayHallo() {
-        return "Hello World";
+        return "Hello El and Emad";
     }
 }
