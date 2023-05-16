@@ -8,7 +8,7 @@ const Navbar = () => {
       <nav>
         <div className="logo-container">
           <img src={Logo} alt="codecool" className="CC-Logo" />
-          <NavLink to="#" className="Logo-name">
+          <NavLink to="/" className="Logo-name">
             {" "}
             CodePool
           </NavLink>
@@ -16,7 +16,7 @@ const Navbar = () => {
         <ul className="navbar">
           <li></li>
           <li>
-            <NavLink to="#">Projects</NavLink>
+            <NavLink to="/">Projects</NavLink>
           </li>
           <li>
             <NavLink to="/students">Students</NavLink>
