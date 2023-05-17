@@ -1,0 +1,10 @@
+.image-div {
+    display: flex; 
+    justify-content: center;
+}
+.image {
+    width: 1000px;
+    margin-top: 10%;
+    margin-bottom: 10%;  
+    
+}
