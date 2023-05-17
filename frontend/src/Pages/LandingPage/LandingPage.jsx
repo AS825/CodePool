@@ -1,22 +1,25 @@
 import { useState, useEffect } from "react";
-import { fetchMessage } from "../../Utils/fetchMethods";
+import { fetchMessage, fetchStudents } from "../../Utils/fetchMethods";
 import "./LandingPage.css";
-import Roadmap from "../../Components/StudentCards/Presentation/Roadmap";
-import ProjectGoals from "../../Components/StudentCards/Presentation/ProjectGoals";
+import StudentSection from "../../Components/StudentCards/StudentCardsSection/StudentCardsSection";
 
 const LandingPage = () => {
   const [message, setMessage] = useState();
+  const [students, setStudents] = useState();
 
   useEffect(() => {
     fetchMessage().then((data) => setMessage(data));
+    fetchStudents().then((data) => setStudents(data));
   }, []);
 
   return (
     <>
-      <div>LandingPage</div>
-      <div className="message">Message: {message}</div>
-      <ProjectGoals/>
-      <Roadmap/>
+      <div className="message">
+        {message ? message : "where are the students?"}
+      </div>
+      <div className="studen-section-container">
+        <StudentSection students={students} />
+      </div>
     </>
   );
 };
