@@ -1,0 +1,6 @@
+.student-grid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    width: 80rem;
+    gap: 3rem;
+}
