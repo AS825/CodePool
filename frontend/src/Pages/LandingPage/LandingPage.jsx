@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { fetchMessage } from "../../Utils/fetchMethods";
 import "./LandingPage.css";
+import Roadmap from "../../Components/StudentCards/Presentation/Roadmap";
+import ProjectGoals from "../../Components/StudentCards/Presentation/ProjectGoals";
 
 const LandingPage = () => {
   const [message, setMessage] = useState();
@@ -13,6 +15,8 @@ const LandingPage = () => {
     <>
       <div>LandingPage</div>
       <div className="message">Message: {message}</div>
+      <ProjectGoals/>
+      <Roadmap/>
     </>
   );
 };
