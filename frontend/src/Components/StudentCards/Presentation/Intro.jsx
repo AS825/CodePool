@@ -1,7 +1,7 @@
 const Intro = () => {
   return (
     <div className="image-div">
-        <img src={"/public/Intro.png"} alt="" className="image" />
+        <img src={"./Intro.png"} alt="" className="image" />
     </div>
   )
 }
