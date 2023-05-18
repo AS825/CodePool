@@ -14,8 +14,8 @@ const StudentCard = ({student}) => {
     </div>
     <div className="card-details">
     <h2>{student.name}</h2>
-    <p>{student.title}</p>
-    <p>TASKS:</p>
+    <h3>{student.title}</h3>
+    <h3>TASKS:</h3>
     <div className="task-container">
       <p>{student.tasks[0]}</p>
       <p>{student.tasks[1]}</p>
