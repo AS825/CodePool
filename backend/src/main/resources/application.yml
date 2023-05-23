@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:codepool
+    driver-class-name: org.h2.Driver
+    username: codepool
+    password:
+  jpa:
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate.format_sql: true
+      hibernate.validator.apply_to_ddl: false
+      hibernate.globally_quoted_identifiers: true
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
