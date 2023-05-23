@@ -1,4 +1,4 @@
-package com.codecool.backend.service;
+package com.codecool.backend.service.company;
 
 import com.codecool.backend.model.entity.Company;
 import com.codecool.backend.repository.CompanyRepository;
