@@ -24,7 +24,7 @@ public class StudentEndpoint {
     }
 
     @PostMapping
-    Student post(@RequestBody Student student) {
+    Student saveStudent(@RequestBody Student student) {
         return studentService.saveStudent(student);
     }
 
@@ -34,7 +34,7 @@ public class StudentEndpoint {
     }
 
     @DeleteMapping("{id}")
-    void delete(@PathVariable long id) {
+    void deleteStudent(@PathVariable long id) {
         studentService.deleteStudent(id);
     }
 }
