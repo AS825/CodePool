@@ -17,17 +17,17 @@ public class CompanyEndpoint {
     }
 
     @GetMapping
-    List<Company> getAll() {
+    List<Company> getAllCompanies() {
         return companyService.getAllCompanies();
     }
 
     @PostMapping
-    Company post(@RequestBody Company company) {
+    Company saveCompany(@RequestBody Company company) {
         return companyService.saveCompany(company);
     }
 
     @DeleteMapping("{id}")
-    void delete(@PathVariable long id) {
+    void deleteCompany(@PathVariable long id) {
         companyService.deleteCompany(id);
     }
 
