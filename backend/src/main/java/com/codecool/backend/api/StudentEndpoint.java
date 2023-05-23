@@ -1,11 +1,9 @@
 package com.codecool.backend.api;
 
 import com.codecool.backend.model.entity.Student;
-import com.codecool.backend.service.StudentService;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.codecool.backend.service.student.StudentNotFoundException;
+import com.codecool.backend.service.student.StudentService;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,5 +21,20 @@ public class StudentEndpoint {
     @GetMapping()
     public List<Student> getAllStudents() {
         return studentService.getAllStudents();
+    }
+
+    @PostMapping
+    Student post(@RequestBody Student student) {
+        return studentService.saveStudent(student);
+    }
+
+    @PatchMapping("/{id}")
+    Student updateStudent(@PathVariable long id, @RequestBody Student student) throws StudentNotFoundException {
+        return studentService.updateStudentById(id, student);
+    }
+
+    @DeleteMapping("{id}")
+    void delete(@PathVariable long id) {
+        studentService.deleteStudent(id);
     }
 }
