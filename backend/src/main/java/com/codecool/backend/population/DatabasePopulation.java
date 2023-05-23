@@ -1,6 +1,8 @@
 package com.codecool.backend.population;
 
+import com.codecool.backend.model.entity.Company;
 import com.codecool.backend.model.entity.Student;
+import com.codecool.backend.repository.CompanyRepository;
 import com.codecool.backend.repository.StudentRepository;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Bean;
@@ -12,10 +14,12 @@ import java.util.List;
 public class DatabasePopulation {
 
     @Bean
-    ApplicationRunner populate(StudentRepository studentRepository) {
+    ApplicationRunner populate(StudentRepository studentRepository, CompanyRepository companyRepository) {
         return args -> {
             List<Student> students = createStudents();
             studentRepository.saveAll(students);
+            List<Company> companies = createCompanies();
+            companyRepository.saveAll(companies);
         };
     }
 
@@ -26,6 +30,13 @@ public class DatabasePopulation {
                 new Student("Michael Johnson", "Description for Michael Johnson", "Project for Michael Johnson", "michael_johnson.jpg"),
                 new Student("Emily Davis", "Description for Emily Davis", "Project for Emily Davis", "emily_davis.jpg"),
                 new Student("Robert Wilson", "Description for Robert Wilson", "Project for Robert Wilson", "robert_wilson.jpg")
+        );
+    }
+
+    private List<Company> createCompanies() {
+        return List.of(
+                new Company("Siemens", "siemens@gmail.com"),
+                new Company("ÖBB", "oebb@gmail.com")
         );
     }
 }
