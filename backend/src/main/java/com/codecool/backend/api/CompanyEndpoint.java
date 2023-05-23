@@ -1,7 +1,7 @@
 package com.codecool.backend.api;
 
 import com.codecool.backend.model.entity.Company;
-import com.codecool.backend.service.CompanyService;
+import com.codecool.backend.service.company.CompanyService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
