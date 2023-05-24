@@ -25,7 +25,7 @@ class StudentServiceTest {
     @Test
     void getStudentById_StudentIsFound() throws StudentNotFoundException {
         long id = 1;
-        Student student = new Student("TestStudent", "TestDescription", "TestProject", "TestImgSrc");
+        Student student = new Student("TestName", "TestDescription", "TestProject", "TestImgSrc");
         when(studentRepository.findById(id)).thenReturn(Optional.of(student));
 
         Student result = studentService.getStudentById(id);
@@ -44,6 +44,13 @@ class StudentServiceTest {
 
     @Test
     void saveStudent() {
+        Student student = new Student("TestName", "TestDescription", "TestProject", "TestImgSrc");
+        when(studentRepository.save(student)).thenReturn(student);
+
+        Student result = studentService.saveStudent(student);
+
+        verify(studentRepository).save(student);
+        assertEquals(student, result);
     }
 
     @Test
@@ -56,5 +63,9 @@ class StudentServiceTest {
 
     @Test
     void deleteStudent() {
+        long id = 1;
+        studentService.deleteStudent(id);
+
+        verify(studentRepository).deleteById(id);
     }
 }
