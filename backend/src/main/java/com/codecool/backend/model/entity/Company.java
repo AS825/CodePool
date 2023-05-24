@@ -2,6 +2,8 @@ package com.codecool.backend.model.entity;
 
 import jakarta.persistence.*;
 
+import java.util.Objects;
+
 @Entity
 @Table(name = "companies")
 public class Company {
@@ -40,5 +42,18 @@ public class Company {
 
     public void setContactMail(String contactMail) {
         this.contactMail = contactMail;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, contactMail);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Company company = (Company) obj;
+        return id == company.id && Objects.equals(name, company.name) && Objects.equals(contactMail, company.contactMail);
     }
 }
