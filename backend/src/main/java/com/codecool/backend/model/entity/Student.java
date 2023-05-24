@@ -2,13 +2,15 @@ package com.codecool.backend.model.entity;
 
 import jakarta.persistence.*;
 
+import java.util.Objects;
+
 
 @Entity
 @Table(name = "students")
 public final class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
     private String name;
     private String description;
     private String project;
@@ -24,11 +26,11 @@ public final class Student {
     public Student() {
     }
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -62,5 +64,18 @@ public final class Student {
 
     public void setImgSrc(String imgSrc) {
         this.imgSrc = imgSrc;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, description, project, imgSrc);
+    }
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Student student = (Student) obj;
+        return id == student.id && Objects.equals(name, student.name) && Objects.equals(description, student.description)
+                && Objects.equals(project, student.project) && Objects.equals(imgSrc, student.imgSrc);
     }
 }
