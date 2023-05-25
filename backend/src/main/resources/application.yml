@@ -17,3 +17,7 @@ spring:
     console:
       enabled: true
       path: /h2-console
+server:
+  max-http-request-header-size: 10485760
+
+
