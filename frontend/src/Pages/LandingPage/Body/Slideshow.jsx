@@ -1,10 +1,12 @@
 import React from "react";
 import { useState } from "react";
 import "./Body.css";
+import Mark from "../../../../src/assets/Mark.png";
+import Roman from "../../../../src/assets/Roman.png";
 
 const slideStyles = {
-  width: "100%",
-  height: "100%",
+  width: "50%",
+  height: "50%",
   borderRadius: "10px",
   backgroundSize: "cover",
   backgroundPosition: "center",
@@ -27,7 +29,7 @@ function Slideshow({ graduates }) {
 
   const slideStylesWidthBackground = {
     ...slideStyles,
-    backgroundImage: `url(${graduates[currentIndex].imgSrc})`,
+    // backgroundImage: `url(${Mark})`,
   };
   const goToSlide = (slideIndex) => {
     setCurrentIndex(slideIndex);
@@ -42,7 +44,19 @@ function Slideshow({ graduates }) {
           ❱
         </div>
       </div>
+
+      <div className="container-graduates" style={{ display: "flex" }}>
+        <img src={Mark} className="graduant container_image"></img>
+        <div className="description">
+          <p>
+            {graduates[0].firstName}, {graduates[0].lastName}
+            <strong> {graduates[0].employer}</strong>
+          </p>
+        </div>
+      </div>
+
       <div style={slideStylesWidthBackground}></div>
+
       <div className="dotsContainerStyles">
         {graduates.map((slide, slideIndex) => (
           <div
