@@ -1,0 +1,47 @@
+h2 {
+  font-family: var(--main-font-family);
+  text-align: center;
+  margin-top: 2.5rem;
+}
+.slideshow {
+  width: 80%;
+  height: 280px;
+  margin: 0 auto;
+  margin-bottom: 5rem;
+}
+.sliderStyles {
+  position: relative;
+  height: 100%;
+}
+.leftArrowStyles {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  left: 32px;
+  font-size: 45px;
+  color: black;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.rightArrowStyles {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  right: 32px;
+  font-size: 45px;
+  color: black;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.dotsContainerStyles {
+  display: flex;
+  justify-content: center;
+}
+
+.dotStyle {
+  margin: 0 3px;
+  cursor: pointer;
+  font-size: 20px;
+}
