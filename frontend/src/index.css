@@ -2,16 +2,18 @@
 
 :root {
   --main-font-family: "Poppins", sans-serif;
-
   --primary-color: rgb(200, 249, 220);
   --secondary-color: rgba(155, 193, 250, 1);
 }
 
+*{
+  font-family: var(--main-font-family);
+}
+
 body {
-  background: var(--primary-color);
-  background: linear-gradient(
-    90deg,
-    var(--primary-color) 0%,
-    var(--secondary-color) 100%
-  );
+  background: white;
+}
+
+.youtube-container{
+  margin-top: 5rem;
 }
