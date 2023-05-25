@@ -54,14 +54,6 @@ class StudentServiceTest {
     }
 
     @Test
-    void updateStudentById() {
-    }
-
-    @Test
-    void updateStudent1() {
-    }
-
-    @Test
     void deleteStudent() {
         long id = 1;
         studentService.deleteStudent(id);
