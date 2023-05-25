@@ -20,4 +20,7 @@ spring:
   data:
     rest:
       base-path: /api
-      default-page-size: 10
+      default-page-size: 12
+
+server:
+  port: 8090
