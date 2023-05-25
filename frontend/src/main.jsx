@@ -6,6 +6,10 @@ import LandingPage from "./Pages/LandingPage/LandingPage";
 import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Students from "./Pages/Students/Students";
+import StudentsPage from "./Pages/StudentPage/StudentPage"
+import ContactPage from "./Pages/ContactPage/ContactPage"
+import ContactPageStudent from "./Pages/ContactPage/ContactPageStudent"
+
 
 const router = createBrowserRouter([
   {
@@ -20,6 +24,18 @@ const router = createBrowserRouter([
       {
         path: "/students",
         element: <Students />,
+      },
+      {
+        path: "/students/:id",
+        element: <StudentsPage />,
+      },
+      {
+        path: "/contact",
+        element: <ContactPage />,
+      },
+      {
+        path: "/contact/:id",
+        element: <ContactPageStudent />,
       },
     ],
   },
