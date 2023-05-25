@@ -18,19 +18,23 @@ public class StudentEndpoint {
         this.studentService = studentService;
     }
 
-    @GetMapping()
+    @GetMapping
     public List<Student> getAllStudents() {
         return studentService.getAllStudents();
     }
 
+    @GetMapping("{id}")
+    public Student getStudentById(@PathVariable long id) throws StudentNotFoundException {
+        return studentService.getStudentById(id);
+    }
     @PostMapping
     Student saveStudent(@RequestBody Student student) {
         return studentService.saveStudent(student);
     }
 
-    @PatchMapping("/{id}")
-    Student updateStudent(@PathVariable long id, @RequestBody Student student) throws StudentNotFoundException {
-        return studentService.updateStudentById(id, student);
+    @PutMapping
+    Student updateStudent(@RequestBody Student student) {
+        return studentService.saveStudent(student);
     }
 
     @DeleteMapping("{id}")
