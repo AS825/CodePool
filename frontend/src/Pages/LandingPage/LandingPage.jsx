@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { fetchMessage } from "../../Utils/fetchMethods";
 import "./LandingPage.css";
+import Header from "../LandingPage/Header/Header";
 
 const LandingPage = () => {
   const [message, setMessage] = useState();
@@ -11,8 +12,9 @@ const LandingPage = () => {
 
   return (
     <>
-      <div>LandingPage</div>
-      <div className="message">Message: {message}</div>
+      <div className="welcomePage">
+        <Header />
+      </div>
     </>
   );
 };
