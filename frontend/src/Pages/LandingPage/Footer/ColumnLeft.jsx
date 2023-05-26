@@ -1,15 +1,17 @@
 import React from "react";
 import "./Contact.css";
 
-function ColumnLeft({ className, imgSrc }) {
+function ColumnLeft({ className, imgSrc, person }) {
   return (
     <div className="container-contact">
       <div className={className}>
-        <img src={imgSrc}></img>
+        <img src={`data:image/jpeg;base64,${imgSrc}`}></img>
         <p>
-          <strong>Lydia Jeschko</strong>
+          <strong>
+            {person.firstName} {person.lastName}
+          </strong>
         </p>
-        <p>Buisniss Development Austria</p>
+        <p>{person.jobDescription}</p>
       </div>
     </div>
   );
