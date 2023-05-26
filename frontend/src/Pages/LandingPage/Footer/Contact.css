@@ -2,16 +2,20 @@
   margin-right: 18rem;
   margin-left: 18rem;
 }
-
+.container-contact p {
+  margin: 0.5rem;
+}
 .right {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  font-family: var(--main-font-family);
 }
 .left {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  font-family: var(--main-font-family);
 }
 .left img {
   width: 15%;
