@@ -1,7 +1,7 @@
-package com.codecool.backend.service.company;
+package com.codecool.backend.service;
 
-import com.codecool.backend.model.entity.Company;
-import com.codecool.backend.repository.CompanyRepository;
+import com.codecool.backend.persistence.entity.Company;
+import com.codecool.backend.persistence.repository.CompanyRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,13 +13,16 @@ public class CompanyService {
     public CompanyService(CompanyRepository companyRepository) {
         this.companyRepository = companyRepository;
     }
-    public List<Company> getAllCompanies() {
+
+    public List<Company> findAll() {
         return companyRepository.findAll();
     }
-    public Company saveCompany(Company company) {
+
+    public Company save(Company company) {
         return companyRepository.save(company);
     }
-    public void deleteCompany(long id) {
+
+    public void deleteById(long id) {
         companyRepository.deleteById(id);
     }
 

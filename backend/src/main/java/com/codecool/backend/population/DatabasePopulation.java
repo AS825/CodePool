@@ -1,9 +1,9 @@
 package com.codecool.backend.population;
 
-import com.codecool.backend.model.entity.Company;
-import com.codecool.backend.model.entity.Student;
-import com.codecool.backend.repository.CompanyRepository;
-import com.codecool.backend.repository.StudentRepository;
+import com.codecool.backend.persistence.entity.Company;
+import com.codecool.backend.persistence.entity.Student;
+import com.codecool.backend.persistence.repository.CompanyRepository;
+import com.codecool.backend.persistence.repository.StudentRepository;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

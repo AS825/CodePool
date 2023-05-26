@@ -1,17 +1,16 @@
-package com.codecool.backend.model.entity;
+package com.codecool.backend.persistence.entity;
 
 import jakarta.persistence.*;
 
 import java.util.Objects;
 
 @Entity
-@Table(name = "companies")
 public class Company {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     private long id;
     private String name;
-    private String contactMail;
+    private String contactMail; // rename this somehow to reflect that it's an email
 
     public Company(String name, String contactMail) {
         this.name = name;

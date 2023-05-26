@@ -1,14 +1,14 @@
 package com.codecool.backend.api;
 
-import com.codecool.backend.model.entity.Student;
-import com.codecool.backend.service.student.StudentNotFoundException;
-import com.codecool.backend.service.student.StudentService;
+import com.codecool.backend.api.exception.ElementNotFoundException;
+import com.codecool.backend.persistence.entity.Student;
+import com.codecool.backend.service.StudentService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/students")
+@RequestMapping("students")
 @CrossOrigin(origins = "*")
 public class StudentEndpoint {
 
@@ -19,26 +19,28 @@ public class StudentEndpoint {
     }
 
     @GetMapping
-    public List<Student> getAllStudents() {
-        return studentService.getAllStudents();
+    public List<Student> get() {
+        return studentService.findAll();
     }
 
     @GetMapping("{id}")
-    public Student getStudentById(@PathVariable long id) throws StudentNotFoundException {
-        return studentService.getStudentById(id);
+    public Student getOne(@PathVariable long id) throws ElementNotFoundException {
+        return studentService.findById(id)
+                .orElseThrow(ElementNotFoundException::new);
     }
+
     @PostMapping
-    Student saveStudent(@RequestBody Student student) {
-        return studentService.saveStudent(student);
+    Student save(@RequestBody Student student) {
+        return studentService.save(student);
     }
 
     @PutMapping
-    Student updateStudent(@RequestBody Student student) {
-        return studentService.saveStudent(student);
+    Student update(@RequestBody Student student) {
+        return studentService.save(student);
     }
 
     @DeleteMapping("{id}")
-    void deleteStudent(@PathVariable long id) {
-        studentService.deleteStudent(id);
+    void deleteOne(@PathVariable long id) {
+        studentService.deleteById(id);
     }
 }

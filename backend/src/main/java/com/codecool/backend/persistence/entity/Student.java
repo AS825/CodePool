@@ -1,4 +1,4 @@
-package com.codecool.backend.model.entity;
+package com.codecool.backend.persistence.entity;
 
 import jakarta.persistence.*;
 
@@ -6,15 +6,14 @@ import java.util.Objects;
 
 
 @Entity
-@Table(name = "students")
 public final class Student {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     private long id;
     private String name;
     private String description;
     private String project;
-    private String imgSrc;
+    private String imgSrc; // i.e. imageSource, image
 
     public Student(String name, String description, String project, String imgSrc) {
         this.name = name;

@@ -1,7 +1,7 @@
 package com.codecool.backend.api;
 
-import com.codecool.backend.model.entity.Company;
-import com.codecool.backend.service.company.CompanyService;
+import com.codecool.backend.persistence.entity.Company;
+import com.codecool.backend.service.CompanyService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,18 +17,18 @@ public class CompanyEndpoint {
     }
 
     @GetMapping
-    List<Company> getAllCompanies() {
-        return companyService.getAllCompanies();
+    List<Company> get() {
+        return companyService.findAll();
     }
 
     @PostMapping
-    Company saveCompany(@RequestBody Company company) {
-        return companyService.saveCompany(company);
+    Company save(@RequestBody Company company) {
+        return companyService.save(company);
     }
 
     @DeleteMapping("{id}")
-    void deleteCompany(@PathVariable long id) {
-        companyService.deleteCompany(id);
+    void deleteOne(@PathVariable long id) {
+        companyService.deleteById(id);
     }
 
 }

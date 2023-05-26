@@ -1,7 +1,7 @@
 package com.codecool.backend.api;
 
-import com.codecool.backend.model.entity.Company;
-import com.codecool.backend.service.company.CompanyService;
+import com.codecool.backend.persistence.entity.Company;
+import com.codecool.backend.service.CompanyService;
 import org.junit.jupiter.api.Test;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +16,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @WebMvcTest(CompanyEndpoint.class)
 class CompanyEndpointTest {
-
     @MockBean
     CompanyService companyService;
     @Autowired
@@ -27,7 +26,7 @@ class CompanyEndpointTest {
         mockMvc.perform(get(url))
                 .andExpect(status().isOk());
 
-        verify(companyService).getAllCompanies();
+        verify(companyService).findAll();
     }
 
     @Test
@@ -37,14 +36,14 @@ class CompanyEndpointTest {
                 {"name": "TestCompany",
                 "contactMail": "testCompany@mail.com"}
                 """;
-        when(companyService.saveCompany(company)).thenReturn(company);
+        when(companyService.save(company)).thenReturn(company);
 
         mockMvc.perform(post(url)
                         .contentType(APPLICATION_JSON)
                         .content(body))
                 .andExpect(status().isOk());
 
-        verify(companyService).saveCompany(company);
+        verify(companyService).save(company);
     }
 
     @Test
@@ -54,6 +53,6 @@ class CompanyEndpointTest {
         mockMvc.perform(delete(deleteUrl))
                 .andExpect(status().isOk());
 
-        verify(companyService).deleteCompany(id);
+        verify(companyService).deleteById(id);
     }
 }
