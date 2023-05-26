@@ -1,4 +1,6 @@
 /* eslint-disable react/prop-types */
+
+
 import StudentCard from "./StudentCard";
 function StudentsGrid({ studentsList }) {
   return (

@@ -1,13 +1,28 @@
 /* eslint-disable react/prop-types */
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import AOS from 'aos';
+import "aos/dist/aos.css";
+
 function getRandomColor() {
-  const hue = Math.floor(Math.random() * 360) + 360;
+  const hue = Math.floor(Math.random() * 360) + 150;
   const saturation = Math.floor(Math.random() * 41) + 60;
   const lightness = Math.floor(Math.random() * 21) + 61;
   return `hsl(${hue} ${saturation}% ${lightness}%)`;
 }
 
+function getRandomEffect() {
+  const effects = ["fade-up", "fade-down", "zoom-in","fade-right", "fade-left", "flip-right" ];
+  const randomIndex = Math.floor(Math.random() * effects.length);
+  return effects[randomIndex];
+}
+
 function StudentCard({ student }) {
+
+  useEffect(() => {
+    AOS.init({duration: 1000})
+  },[])
+
   const getIdFromHref = () => {
     const href = student._links.student.href;
     var regex = /\/(\d+)$/;
@@ -38,11 +53,12 @@ function StudentCard({ student }) {
       ? student.description.substring(0, 30) + "..."
       : student.description;
 
+      const randomEffect = getRandomEffect();
 
   return (
     <>
-      <div>
-        <article>
+      <div >
+      <article data-aos={randomEffect}>
           <figure style={bgStyle}>
             <Link to={`/students/${studentId}`}>
               <img
