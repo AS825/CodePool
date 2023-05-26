@@ -5,7 +5,9 @@ import Video from "./YoutubeEmb";
 function Header() {
   return (
     <div className="headLine">
-      <h1>Invest in your company with our qualified developers</h1>
+      <h1>
+        {"< "}Code Cool with CodeCoolers{" />"}
+      </h1>
       <Video />
     </div>
   );
