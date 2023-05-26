@@ -6,7 +6,8 @@ import Lydia from "../../../assets/Lydia.png";
 import Sigrid from "../../../assets/Sigrid.png";
 import Isabella from "../../../assets/Isabella.png";
 
-function Contact() {
+function Contact({ officePersonal }) {
+  console.log(officePersonal);
   return (
     <div>
       <ColumnRight className={"right"} imgSrc={Sigrid} />
