@@ -13,7 +13,6 @@ public class Graduate {
     private String employer;
     private String position;
     @Column(length = 1000000)
-    //@Column(length = 1000000)
     private String imgSrc;
 
     public Graduate(String firstName, String lastName, String employer, String position, String imgSrc) {
