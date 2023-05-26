@@ -2,8 +2,10 @@ package com.codecool.backend.population;
 
 import com.codecool.backend.model.entity.Company;
 import com.codecool.backend.model.entity.Graduate;
+import com.codecool.backend.model.entity.OfficePersonal;
 import com.codecool.backend.model.entity.Student;
 import com.codecool.backend.repository.CompanyRepository;
+import com.codecool.backend.repository.OfficePersonalRepository;
 import com.codecool.backend.repository.WelcomePageRepository;
 import com.codecool.backend.repository.StudentRepository;
 import com.codecool.backend.service.converter.Base64Converter;
@@ -18,7 +20,7 @@ import java.util.List;
 public class DatabasePopulation {
 
     @Bean
-    ApplicationRunner populate(StudentRepository studentRepository, CompanyRepository companyRepository, WelcomePageRepository graduateRepository) {
+    ApplicationRunner populate(StudentRepository studentRepository, CompanyRepository companyRepository, WelcomePageRepository graduateRepository, OfficePersonalRepository officePersonalRepository) {
         return args -> {
             List<Student> students = createStudents();
             studentRepository.saveAll(students);
@@ -26,8 +28,17 @@ public class DatabasePopulation {
             companyRepository.saveAll(companies);
             List<Graduate> graduates = createGraduates();
             graduateRepository.saveAll(graduates);
-
+            List<OfficePersonal> officePeople = createOfficePersonal();
+            officePersonalRepository.saveAll(officePeople);
         };
+    }
+
+    private List<OfficePersonal> createOfficePersonal() {
+        return List.of(
+                new OfficePersonal("Sigrid","Hantusch-Taferner","CountryManager","1234"),
+                new OfficePersonal("Lydia","Jeschko","Buisniss Development Austria","fake@email.com"),
+                new OfficePersonal("Isabella Kristina","Miglinci","Marketing & Press","fake@email.com")
+        );
     }
 
     private List<Graduate> createGraduates() throws IOException {
