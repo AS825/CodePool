@@ -1,17 +1,16 @@
 import { useState, useEffect } from "react";
 import {
   fetchStudents,
-  // fetchNextPageOfStudents,
+  fetchNextPageOfStudents,
 } from "../../Utils/fetchMethods";
 import StudentsGrid from "../../Components/StudentsGrid";
+import LoadingAnimation from "../../Components/LoadingAnimation"; // Import the LoadingAnimation component
 import "./Students.css";
-// import AOS from 'aos';
-// import "aos/dist/aos.css";
 
 function Students() {
   const [students, setStudents] = useState([]);
-  // const [currentPage, setCurrentPage] = useState(0);
-  // const [loading, setLoading] = useState(false);
+  const [currentPage, setCurrentPage] = useState(0);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     fetchStudents().then((data) => {
@@ -19,28 +18,28 @@ function Students() {
     });
   }, []);
 
-  // const loadMoreStudents = () => {
-  //   if (loading) return;
-  //   setLoading(true);
-  //   fetchNextPageOfStudents(currentPage + 1).then((data) => {
-  //     const newStudents = data?._embedded.students;
-  //     setStudents((prevStudents) => [...prevStudents, ...newStudents]);
-  //     setCurrentPage(data?.page.number);
-  //     setLoading(false);
-  //   });
-  // };
+  const loadMoreStudents = () => {
+    if (loading) return;
+    setLoading(true);
+    fetchNextPageOfStudents(currentPage + 1).then((data) => {
+      const newStudents = data?._embedded.students;
+      setStudents((prevStudents) => [...prevStudents, ...newStudents]);
+      setCurrentPage(data?.page.number);
+      setLoading(false);
+    });
+  };
 
-  // useEffect(() => {
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => window.removeEventListener("scroll", handleScroll);
-  // },);
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-  // const handleScroll = () => {
-  //   const { scrollTop, clientHeight, scrollHeight } = document.documentElement;
-  //   if (scrollTop + clientHeight >= scrollHeight - 100) {
-  //     loadMoreStudents();
-  //   }
-  // };
+  const handleScroll = () => {
+    const { scrollTop, clientHeight, scrollHeight } = document.documentElement;
+    if (scrollTop + clientHeight >= scrollHeight - 100) {
+      loadMoreStudents();
+    }
+  };
 
   return (
     <div className="students">
@@ -49,7 +48,7 @@ function Students() {
         <h3 className="sub-title">CodeCool Jobhunters</h3>
       </div>
       <StudentsGrid studentsList={students} />
-      {/* {loading && <p>Loading more students...</p>} */}
+      <LoadingAnimation loading={loading} /> {/* Display the loading animation */}
     </div>
   );
 }
