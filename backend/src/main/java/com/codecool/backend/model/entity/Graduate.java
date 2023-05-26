@@ -3,24 +3,23 @@ package com.codecool.backend.model.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "graduates")
 public class Graduate {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     private long id;
     private String firstName;
     private String lastName;
     private String employer;
     private String position;
     @Column(length = 1000000)
-    private String imgSrc;
+    private String imageSource;
 
     public Graduate(String firstName, String lastName, String employer, String position, String imgSrc) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.employer = employer;
         this.position = position;
-        this.imgSrc = imgSrc;
+        this.imageSource = imgSrc;
     }
 
     public long getId() {
@@ -43,8 +42,8 @@ public class Graduate {
         return position;
     }
 
-    public String getImgSrc() {
-        return imgSrc;
+    public String getImageSource() {
+        return imageSource;
     }
 
     public Graduate() {
