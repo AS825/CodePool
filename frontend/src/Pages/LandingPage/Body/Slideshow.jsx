@@ -1,8 +1,6 @@
 import React from "react";
 import { useState } from "react";
 import "./Body.css";
-import Mark from "../../../../src/assets/Mark.png";
-import Roman from "../../../../src/assets/Roman.png";
 
 const slideStyles = {
   width: "50%",
@@ -29,7 +27,7 @@ function Slideshow({ graduates }) {
 
   const slideStylesWidthBackground = {
     ...slideStyles,
-    // backgroundImage: `url(${Mark})`,
+    //backgroundImage: `url(${graduates[currentIndex].imgSrc})`,
   };
   const goToSlide = (slideIndex) => {
     setCurrentIndex(slideIndex);
@@ -46,11 +44,16 @@ function Slideshow({ graduates }) {
       </div>
 
       <div className="container-graduates" style={{ display: "flex" }}>
-        <img src={Mark} className="graduant container_image"></img>
+        <img
+          src={`data:image/jpeg;base64,${graduates[currentIndex].imageSource}`}
+          className="graduant container_image"
+        ></img>
         <div className="description">
           <p>
-            {graduates[0].firstName}, {graduates[0].lastName}
-            <strong> {graduates[0].employer}</strong>
+            <span>{graduates[currentIndex].firstName}</span>
+            <span> {graduates[currentIndex].lastName}</span>
+            <em> {graduates[currentIndex].position} </em>
+            <strong> {graduates[currentIndex].employer}</strong>
           </p>
         </div>
       </div>
