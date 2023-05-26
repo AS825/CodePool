@@ -3,6 +3,7 @@ import "./Body.css";
 import Slideshow from "./Slideshow";
 
 function Body({ graduates }) {
+  console.log(graduates);
   return (
     <div>
       <h2>Our students work for </h2>
