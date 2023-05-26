@@ -5,7 +5,8 @@ function YoutubeEmb() {
   return (
     <div className="video">
       <iframe
-        width="750"
+        className="fabio-video"
+        width="850"
         height="415"
         src="https://www.youtube.com/embed/qyV_A9wRHO8"
         title="YouTube video player"
