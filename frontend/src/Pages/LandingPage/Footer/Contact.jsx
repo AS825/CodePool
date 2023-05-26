@@ -2,17 +2,25 @@ import React from "react";
 import "./Contact.css";
 import ColumnRight from "./ColumnRight";
 import ColumnLeft from "./ColumnLeft";
-import Lydia from "../../../assets/Lydia.png";
-import Sigrid from "../../../assets/Sigrid.png";
-import Isabella from "../../../assets/Isabella.png";
 
 function Contact({ officePersonal }) {
-  console.log(officePersonal);
   return (
     <div>
-      <ColumnRight className={"right"} imgSrc={Sigrid} />
-      <ColumnLeft className={"left"} imgSrc={Lydia} />
-      <ColumnRight className={"right"} imgSrc={Isabella} />
+      <ColumnRight
+        className={"right"}
+        imgSrc={officePersonal[0].imageSource}
+        person={officePersonal[0]}
+      />
+      <ColumnLeft
+        className={"left"}
+        imgSrc={officePersonal[1].imageSource}
+        person={officePersonal[1]}
+      />
+      <ColumnRight
+        className={"right"}
+        imgSrc={officePersonal[2].imageSource}
+        person={officePersonal[2]}
+      />
     </div>
   );
 }
