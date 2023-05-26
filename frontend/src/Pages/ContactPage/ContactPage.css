@@ -294,11 +294,14 @@ button:hover .button-text {
 @keyframes anim {
   0% {
     background-position: 0 50%;
+    transform: scale(1);
   }
   50% {
     background-position: 100% 50%;
+    transform: scale(1.2);
   }
   100% {
     background-position: 0 50%;
+    transform: scale(1);
   }
 }
