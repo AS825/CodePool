@@ -33,11 +33,12 @@ public class DatabasePopulation {
         };
     }
 
-    private List<OfficePersonal> createOfficePersonal() {
+    private List<OfficePersonal> createOfficePersonal() throws IOException {
+        Base64Converter base64Converter = new Base64Converter();
         return List.of(
-                new OfficePersonal("Sigrid","Hantusch-Taferner","CountryManager","1234"),
-                new OfficePersonal("Lydia","Jeschko","Buisniss Development Austria","fake@email.com"),
-                new OfficePersonal("Isabella Kristina","Miglinci","Marketing & Press","fake@email.com")
+                new OfficePersonal("Sigrid","Hantusch-Taferner","CountryManager","1234", base64Converter.convertImgToBase64String("/home/bernadette/CodeCool-projects/Modul4/CodePool/backend/img/Sigrid.png")),
+                new OfficePersonal("Lydia","Jeschko","Buisniss Development Austria","fake@email.com", base64Converter.convertImgToBase64String("/home/bernadette/CodeCool-projects/Modul4/CodePool/backend/img/Lydia.png")),
+                new OfficePersonal("Isabella Kristina","Miglinci","Marketing & Press","fake@email.com", base64Converter.convertImgToBase64String("/home/bernadette/CodeCool-projects/Modul4/CodePool/backend/img/Isabella.png"))
         );
     }
 
