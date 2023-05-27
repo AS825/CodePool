@@ -13,9 +13,9 @@ public class WelcomePageService {
     private final WelcomePageRepository welcomePageRepository;
     private final OfficePersonalRepository officePersonalRepository;
 
-    public WelcomePageService(WelcomePageRepository welcomePageRepository, OfficePersonalRepository officePersonalRepository, OfficePersonalRepository officePersonalRepository1) {
+    public WelcomePageService(WelcomePageRepository welcomePageRepository, OfficePersonalRepository officePersonalRepository) {
         this.welcomePageRepository = welcomePageRepository;
-        this.officePersonalRepository = officePersonalRepository1;
+        this.officePersonalRepository = officePersonalRepository;
     }
 
     public List<Graduate> getGraduatesForSlideshow() {
