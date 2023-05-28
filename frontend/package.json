@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@iconscout/react-unicons": "^2.0.2",
+    "@react-spring/parallax": "^9.7.2",
+    "@react-spring/web": "^9.7.2",
     "aos": "^2.3.4",
     "axios": "^1.4.0",
     "framer-motion": "^10.12.16",
