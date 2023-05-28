@@ -9,6 +9,7 @@ import Students from "./Pages/Students/Students";
 import StudentsPage from "./Pages/StudentPage/StudentPage"
 import ContactPage from "./Pages/ContactPage/ContactPage"
 import ContactPageStudent from "./Pages/ContactPage/ContactPageStudent"
+import LoginPage from "./Pages/LoginPage/LoginPage";
 
 
 const router = createBrowserRouter([
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <LandingPage />,
+      },
+      {
+        path: "/login",
+        element: <LoginPage />,
       },
       {
         path: "/students",

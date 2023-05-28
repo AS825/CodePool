@@ -1,0 +1,91 @@
+:root {
+	--anims: float, floatReverse, float2, floatReverse2;
+	--easeSmooth: cubic-bezier(0.39, 0.575, 0.28, 0.995);
+	--color: #030303;
+}
+
+.containerE{
+    margin: 0;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+}
+
+.content {
+	position: relative;
+    border-radius: 5px;
+	width: 600px;
+	max-width: 100%;
+	margin: 20px;
+	padding: 60px 40px;
+	text-align: center;
+	box-shadow: 10px 60px 67px 12px rgba(0, 0, 0, 0.2);
+	opacity: 0;
+	animation: apparition 1.2s var(--easeSmooth) forwards;
+}
+
+.content p {
+	font-size: 1.3rem;
+	margin-top: 0;
+	margin-bottom: 0.6rem;
+	letter-spacing: 0.1rem;
+	color: var(--color);
+}
+
+.content p:last-child {
+	margin-bottom: 0;
+}
+
+.content button {
+	display: inline-block;
+	margin-top: 2rem;
+	padding: 0.5rem 1rem;
+	border: 3px solid var(--color);
+	background: transparent;
+	font-size: 1rem;
+	color: var(--color);
+	text-decoration: none;
+	cursor: pointer;
+	font-weight: bold;
+}
+
+
+
+@keyframes apparition {
+	from {
+		opacity: 0;
+		transform: translateY(100px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.center-btn{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+.Error-anim{
+    background: linear-gradient(90deg, #0071e2, #c506ff);
+    background-size: 400% 400%;
+    animation: animError 10s infinite ease-in-out;
+    border-radius: 10px;
+  }
+  
+  @keyframes animError {
+    0% {
+      background-position: 0 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0 50%;
+    }
+  }

@@ -11,6 +11,12 @@ function getRandomColor() {
   return `hsl(${hue} ${saturation}% ${lightness}%)`;
 }
 
+function getRandomEffect() {
+  const effects = ["fade-up", "fade-down", "zoom-in","fade-right", "fade-left", "flip-right" ];
+  const randomIndex = Math.floor(Math.random() * effects.length);
+  return effects[randomIndex];
+}
+
 function StudentCard({ student }) {
 
   useEffect(() => {
@@ -47,12 +53,12 @@ function StudentCard({ student }) {
       ? student.description.substring(0, 30) + "..."
       : student.description;
 
-
+      const randomEffect = getRandomEffect();
 
   return (
     <>
       <div >
-      <article data-aos='zoom-in'>
+      <article data-aos={randomEffect}>
           <figure style={bgStyle}>
             <Link to={`/students/${studentId}`}>
               <img

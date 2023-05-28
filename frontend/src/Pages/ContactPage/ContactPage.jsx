@@ -1,7 +1,10 @@
 import "./ContactPage.css";
+import { useEffect } from "react";
 import Lydia from "../../assets/Lydia.png";
 import { UilLinkedin } from "@iconscout/react-unicons";
 import LogoBusiness from "../../assets/logo-white-1.png";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function handleSubmit(e) {
   e.preventDefault(); // Prevent the default form submission behavior
@@ -34,11 +37,15 @@ function handleSubmit(e) {
   window.location.href = mailtoLink;
 }
 function ContactPage() {
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
+
   return (
     <>
       <div className="form-container">
         <div className="container">
-          <div className="container-social">
+          <div data-aos="fade-down" className="container-social">
             <a className="link" href="https://business.codecool.com/de/">
               <div className="Logo-link animation">
                 <img
@@ -49,7 +56,7 @@ function ContactPage() {
               </div>
             </a>
           </div>
-          <div className="img-container">
+          <div data-aos="zoom-in" className="img-container">
             <img className="Lydia-img" src={Lydia} alt="image" />
             <div className="contact">
               <div className="contact-info">
@@ -65,7 +72,7 @@ function ContactPage() {
               </div>
             </div>
           </div>
-          <form onSubmit={handleSubmit}>
+          <form data-aos="fade-left" onSubmit={handleSubmit}>
             <div className="container-text">
               <h2>Intrestet in becoming a Partner?</h2>
               <p>Contact me so we can browse our students!</p>

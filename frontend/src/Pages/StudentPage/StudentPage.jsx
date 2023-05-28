@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { fetchStudent } from "../../Utils/fetchMethods";
 import "./StudentPage.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function getRandomColor() {
   const hue = Math.floor(Math.random() * 360) + 360;
@@ -27,7 +29,9 @@ function StudentPage() {
     overflow: "hidden",
     borderRadius: "1.5rem",
   };
-
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
   useEffect(() => {
     fetchStudent(id).then((data) => {
       setStudent(data);
@@ -42,7 +46,7 @@ function StudentPage() {
     <div>
       <div className="student-details-container">
         <div className="student-details-container-left">
-          <article className="article-container">
+          <article data-aos="fade-right" className="article-container">
             <figure style={bgStyle}>
               <img
                 className="card-img-student"
@@ -51,8 +55,8 @@ function StudentPage() {
               />
             </figure>
           </article>
-          <h1>Name: {student.name}</h1>
-          <table className="unstyledTable">
+          <h1 data-aos="fade-left">Name: {student.name}</h1>
+          <table data-aos="zoom-in-up"  className="unstyledTable">
             <thead></thead>
             <tbody>
               <tr>
@@ -74,7 +78,7 @@ function StudentPage() {
             </tbody>
           </table>
         </div>
-        <div className="student-details-container-right">
+        <div data-aos="zoom-in-left" className="student-details-container-right">
           <h1 className="journey-header"> My Journey</h1>
           <span>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum non
@@ -104,15 +108,13 @@ function StudentPage() {
           </span>
         </div>
       </div>
-      <div className="link-container">
+      <div  data-aos="fade-up" className="link-container">
         <Link to={`/students/`}>
           <button className="box">Back to all Students</button>
         </Link>
 
         <Link to={`/contact/${id}`}>
-          <button className="box">
-            Contact
-          </button>
+          <button className="box">Contact</button>
         </Link>
       </div>
     </div>

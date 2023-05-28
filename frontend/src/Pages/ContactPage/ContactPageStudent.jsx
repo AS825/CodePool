@@ -5,10 +5,16 @@ import "../ContactPage/ContactPage.css"
 import Lydia from "../../assets/Lydia.png";
 import { UilLinkedin } from "@iconscout/react-unicons";
 import LogoBusiness from "../../assets/logo-white-1.png";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function ContactPageStudent() {
   const { id } = useParams();
   const [student, setStudent] = useState(null);
+
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
 
   useEffect(() => {
     fetchStudent(id).then((data) => {
@@ -56,7 +62,7 @@ function handleSubmit(e) {
     <>
       <div className="form-container">
         <div className="container">
-          <div className="container-social">
+          <div data-aos="fade-down" className="container-social">
             <a className="link" href="https://business.codecool.com/de/">
               <div className="Logo-link animation">
                 <img
@@ -67,7 +73,7 @@ function handleSubmit(e) {
               </div>
             </a>
           </div>
-          <div className="img-container">
+          <div data-aos="zoom-in" className="img-container">
             <img className="Lydia-img" src={Lydia} alt="image" />
             <div className="contact">
               <div className="contact-info">
@@ -83,7 +89,7 @@ function handleSubmit(e) {
               </div>
             </div>
           </div>
-          <form onSubmit={handleSubmit}>
+          <form data-aos="fade-left" onSubmit={handleSubmit}>
             <div className="container-text">
               <h2>Did you find a student?</h2>
               <p>Contact me so we can help you get a new employee!</p>

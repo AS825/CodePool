@@ -4,7 +4,7 @@ import {
   fetchNextPageOfStudents,
 } from "../../Utils/fetchMethods";
 import StudentsGrid from "../../Components/StudentsGrid";
-import LoadingAnimation from "../../Components/LoadingAnimation"; // Import the LoadingAnimation component
+import LoadingAnimation from "../../Components/LoadingAnimation"; 
 import "./Students.css";
 
 function Students() {
@@ -44,11 +44,11 @@ function Students() {
   return (
     <div className="students">
       <div className="student-header">
-        <h1 className="title">Students</h1>
-        <h3 className="sub-title">CodeCool Jobhunters</h3>
+        <h1 className="title"> CodeCool Students</h1>
+        <h3 className="sub-title">Jobhunters</h3>
       </div>
       <StudentsGrid studentsList={students} />
-      <LoadingAnimation loading={loading} /> {/* Display the loading animation */}
+      <LoadingAnimation loading={loading} />
     </div>
   );
 }
