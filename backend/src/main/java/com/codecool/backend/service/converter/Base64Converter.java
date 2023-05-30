@@ -11,7 +11,6 @@ import java.util.Base64;
 public class Base64Converter {
 
     public String convertImgToBase64String(String filepath) throws IOException {
-
         byte[] fileContent = FileUtils.readFileToByteArray(new File(filepath));
         String encodedString = Base64.getEncoder().encodeToString(fileContent);
         return encodedString;
