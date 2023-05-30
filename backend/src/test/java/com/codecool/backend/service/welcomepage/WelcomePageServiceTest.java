@@ -1,14 +1,13 @@
 package com.codecool.backend.service.welcomepage;
 
 import com.codecool.backend.repository.OfficePersonalRepository;
-import com.codecool.backend.repository.WelcomePageRepository;
 import org.junit.jupiter.api.Test;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.*;
 
 
 class WelcomePageServiceTest {
-    WelcomePageRepository welcomePageRepository = mock(WelcomePageRepository.class);
+    com.codecool.backend.repository.GraduateRepository welcomePageRepository = mock(com.codecool.backend.repository.GraduateRepository.class);
     OfficePersonalRepository officePersonalRepository = mock(OfficePersonalRepository.class);
     WelcomePageService welcomePageService = new WelcomePageService(welcomePageRepository, officePersonalRepository);
 
