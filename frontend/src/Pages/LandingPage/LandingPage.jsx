@@ -20,7 +20,6 @@ import { UilStar } from "@iconscout/react-unicons";
 import StudentsGridLanding from "../../Components/StudentsGridLanding";
 import { fetchStudentLimit } from "../../Utils/fetchMethods";
 
-import { useState, useEffect } from "react";
 import { fetchOfficePersonal, fetchGraduates } from "../../Utils/fetchMethods";
 import "./LandingPage.css";
 
@@ -41,11 +40,13 @@ const LandingPage = () => {
     const fetchData = async () => {
       await fetchGraduates().then((data) => setGraduates(data));
       await fetchOfficePersonal().then((data) => setOfficePersonal(data));
+      fetchStudentLimit(3).then((data) => {
+        setStudents(data?._embedded.students);
+      });
     };
+
     fetchData();
-    fetchStudentLimit(3).then((data) => {
-      setStudents(data?._embedded.students);
-    });
+   
   }, []);
 
   return (
