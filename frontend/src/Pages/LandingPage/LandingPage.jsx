@@ -1,17 +1,16 @@
 import { useRef, useEffect, useState } from "react";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
+import { fetchStudentLimit } from "../../Utils/fetchMethods";
+import { fetchOfficePersonal, fetchGraduates } from "../../Utils/fetchMethods";
 import Header from "./Header/Header";
 import Body from "./Body/Body";
 import Footer from "./Footer/Footer";
-import { fetchStudentLimit } from "../../Utils/fetchMethods";
 import officePurple from "../../assets/landing/officePurple.png";
 import officeBlue from "../../assets/landing/officeBluePurple.png";
-
-import { fetchOfficePersonal, fetchGraduates } from "../../Utils/fetchMethods";
 import "./LandingPage.css";
-
-import AOS from "aos";
 import "aos/dist/aos.css";
+import AOS from "aos";
+
 const LandingPage = () => {
   const [graduates, setGraduates] = useState();
   const [officePersonal, setOfficePersonal] = useState();
