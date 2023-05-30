@@ -1,7 +1,5 @@
 package com.codecool.backend.api;
 
-import com.codecool.backend.model.entity.Graduate;
-import com.codecool.backend.repository.WelcomePageRepository;
 import com.codecool.backend.service.welcomepage.WelcomePageService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,14 +9,10 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 
-import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
-
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest(WelcomePageEndpoint.class)
 class WelcomePageEndpointTest {
