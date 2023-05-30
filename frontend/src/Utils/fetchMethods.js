@@ -41,3 +41,13 @@ export const fetchNextPageOfStudents = async (page) => {
       throw error;
     }
   };
+
+  export const fetchStudentLimit = async (limit) => {
+    try {
+      const response = await axios.get(path + `api/students?size=${limit}`);
+      return response.data;
+    } catch (error) {
+      console.error("Error fetching message: ", error);
+      throw error;
+    }
+  };
