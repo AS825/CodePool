@@ -3,17 +3,16 @@ package com.codecool.backend.service.welcomepage;
 import com.codecool.backend.model.entity.Graduate;
 import com.codecool.backend.model.entity.OfficePersonal;
 import com.codecool.backend.repository.OfficePersonalRepository;
-import com.codecool.backend.repository.WelcomePageRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class WelcomePageService {
-    private final WelcomePageRepository welcomePageRepository;
+    private final com.codecool.backend.repository.GraduateRepository welcomePageRepository;
     private final OfficePersonalRepository officePersonalRepository;
 
-    public WelcomePageService(WelcomePageRepository welcomePageRepository, OfficePersonalRepository officePersonalRepository) {
+    public WelcomePageService(com.codecool.backend.repository.GraduateRepository welcomePageRepository, OfficePersonalRepository officePersonalRepository) {
         this.welcomePageRepository = welcomePageRepository;
         this.officePersonalRepository = officePersonalRepository;
     }
