@@ -10,12 +10,13 @@ public class Company {
     @GeneratedValue
     private long id;
     private String name;
-    private String contactMail; // rename this somehow to reflect that it's an email
+    private String email;
 
-    public Company(String name, String contactMail) {
+    public Company(String name, String email) {
         this.name = name;
-        this.contactMail = contactMail;
+        this.email = email;
     }
+
     public Company() {
     }
 
@@ -35,24 +36,23 @@ public class Company {
         this.name = name;
     }
 
-    public String getContactMail() {
-        return contactMail;
+    public String getEmail() {
+        return email;
     }
 
-    public void setContactMail(String contactMail) {
-        this.contactMail = contactMail;
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Company company)) return false;
+        return getId() == company.getId() && Objects.equals(getName(), company.getName()) && Objects.equals(getEmail(), company.getEmail());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, contactMail);
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null || getClass() != obj.getClass()) return false;
-        Company company = (Company) obj;
-        return id == company.id && Objects.equals(name, company.name) && Objects.equals(contactMail, company.contactMail);
+        return Objects.hash(getId(), getName(), getEmail());
     }
 }
