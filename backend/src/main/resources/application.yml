@@ -1,5 +1,13 @@
 spring:
+  datasource:
+    url: jdbc:h2:mem:codepool
+    driver-class-name: org.h2.Driver
+    username: codepool
+    password:
   jpa:
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: create-drop
     show-sql: true
     properties:
       hibernate.format_sql: true
@@ -9,6 +17,11 @@ spring:
     console:
       enabled: true
       path: /h2-console
+server:
+  max-http-request-header-size: 10485760
+
+
+
   data:
     rest:
       base-path: /api

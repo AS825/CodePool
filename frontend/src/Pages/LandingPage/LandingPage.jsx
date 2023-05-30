@@ -20,11 +20,15 @@ import { UilStar } from "@iconscout/react-unicons";
 import StudentsGridLanding from "../../Components/StudentsGridLanding";
 import { fetchStudentLimit } from "../../Utils/fetchMethods";
 
+import { useState, useEffect } from "react";
+import { fetchOfficePersonal, fetchGraduates } from "../../Utils/fetchMethods";
 import "./LandingPage.css";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
 const LandingPage = () => {
+  const [graduates, setGraduates] = useState();
+  const [officePersonal, setOfficePersonal] = useState();
   const ref = useRef();
 
   useEffect(() => {
@@ -34,10 +38,16 @@ const LandingPage = () => {
   const [students, setStudents] = useState([]);
 
   useEffect(() => {
+    const fetchData = async () => {
+      await fetchGraduates().then((data) => setGraduates(data));
+      await fetchOfficePersonal().then((data) => setOfficePersonal(data));
+    };
+    fetchData();
     fetchStudentLimit(3).then((data) => {
       setStudents(data?._embedded.students);
     });
   }, []);
+
   return (
     <div className="landing-page-container">
       <Parallax pages={5} ref={ref} className="background-landing">

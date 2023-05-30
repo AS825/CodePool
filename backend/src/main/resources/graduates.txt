@@ -1,0 +1,2 @@
+Mark;Hartleib;Schrack Technik;Junior ERP Developer;/home/bernadette/CodeCool-projects/Modul4/CodePool/backend/img/Mark.png
+Roman;Fann;Smatrics;Junior Developer;/home/bernadette/CodeCool-projects/Modul4/CodePool/backend/img/Roman.png;

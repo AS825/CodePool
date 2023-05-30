@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("companies")
+@RequestMapping("/companies")
 @CrossOrigin(origins = "*")
 public class CompanyEndpoint {
     private final CompanyService companyService;
