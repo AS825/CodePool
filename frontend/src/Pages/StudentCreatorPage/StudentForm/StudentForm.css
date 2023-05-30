@@ -1,0 +1,93 @@
+.component{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+    font-size: 1.6rem;
+}
+.container{
+    max-width: 1300px;
+    max-height: 800px;
+    width: 100%;
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 25px;
+    box-shadow: 0 5px 800px rgba(0,0,0,0.15);
+}
+.title{
+    font-size: 2.5rem;
+    font-weight: 500;
+    position: relative;
+    margin-bottom: 50px;
+}
+.title::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    height: 7px;
+    width: 450px;
+    border-radius: 5px;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+.content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; 
+    gap: 200px;
+    justify-content: center;
+    margin: 20px 100px 20px 0; 
+}
+.data-section {
+    display: flex; 
+    flex-direction: column;
+    gap: 40px;
+}
+.form-element-heading {
+    margin-bottom: 5px;
+}
+input {
+    height: 45px;
+    width: 450px;
+    outline: none;
+    font-size: 16px;
+    border-radius: 5px;
+    padding-left: 15px;
+    border: 1px solid #ccc;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+textarea {
+    font-size: 1rem;
+    padding: 0.8rem;
+    width: 450px; 
+    height: 150px;
+}
+.form-element {
+}
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+button{
+    height: 45px;
+    width: 150px;
+    margin: 15px 0;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+
+}
+button:hover{
+    background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+}
