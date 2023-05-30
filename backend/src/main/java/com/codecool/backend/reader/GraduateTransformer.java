@@ -14,7 +14,7 @@ public class GraduateTransformer implements DataTransformer<Graduate> {
     }
 
     @Override
-    public Graduate transform(String line) throws IOException {
+    public Graduate transform(String line) throws IOException{
             String[] columns = line.split(",");
             String firstName = columns[0];
             String lastName = columns[1];
@@ -22,6 +22,5 @@ public class GraduateTransformer implements DataTransformer<Graduate> {
             String position = columns[3];
             String image = base64Converter.convertImgToBase64String(columns[4]);
             return new Graduate(firstName, lastName, companyName, position, image);
-
     }
 }
