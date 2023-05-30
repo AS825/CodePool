@@ -91,3 +91,37 @@ button{
 button:hover{
     background: linear-gradient(-135deg, #71b7e6, #9b59b6);
 }
+
+.image-section {
+    display: flex; 
+    flex-direction: column;
+    justify-content: baseline;
+    align-items: center;
+}
+
+.image {
+    width: 500px; 
+}
+
+.image-input {
+    display: none;
+}
+
+.image-label {
+    margin-top: 40px; 
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #eaeaea;
+    color: #333;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+.image-label:hover {
+  background-color: #ccc;
+}
+
+.image-preview {
+  max-width: 200px;
+  margin-top: 10px;
+}

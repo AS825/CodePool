@@ -11,17 +11,42 @@ const StudentForm = ({
     return {
       name: "", 
       description: "", 
-      project: ""
+      project: "",
+      image: "",
     };
   };
  
-  const [formObject, setFormObject] = useState(initFormObject()); 
+  const [formObject, setFormObject] = useState(initFormObject());
+  const [uploadedImage, setUploadedImage] = useState(null);  
 
   const updateFormObject = (key, value) => {
     setFormObject(prevObject => {
       return {
         ...prevObject, 
         [key]: value
+      };
+    });
+  };
+
+  const onFileUpload = async (event) => {
+    setUploadedImage(URL.createObjectURL(event.target.files[0]));
+    const file = event.target.files[0];
+    const base64 = await convertToBase64(file); 
+    console.log(base64); 
+    console.log(event.target.name); 
+    updateFormObject(event.target.name, base64);
+    console.log(formObject);
+  };
+
+  const convertToBase64 = (file) => {
+    return new Promise((resolve,reject) => {
+      const fileReader = new FileReader(); 
+      fileReader.readAsDataURL(file); 
+      fileReader.onload = () => {
+        resolve(fileReader.result); 
+      };
+      fileReader.onerror = (error) => {
+        reject(error); 
       };
     });
   };
@@ -32,7 +57,10 @@ const StudentForm = ({
         <div className="title"> Create your own page </div>
         <div className="content">
           <div className="image-section">
-            Section for inserting image
+            {uploadedImage ? <img src={uploadedImage} className="image" /> : <img src="" className="image"/> }
+            <label htmlFor="image-input" className="image-label">Select Image
+              <input id="image-input" name="image" type="file" className="image-input" onChange={(event) => onFileUpload(event)}/>
+            </label>
           </div>
           <div className="data-section">
             <div className="form-element"> 

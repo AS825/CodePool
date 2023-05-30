@@ -16,8 +16,16 @@ export const fetchMessage = async () => {
 export const postStudent = async (student) => {
     try {
         await axios.post("http://localhost:8080/students", student);
-        console.log(student); 
 
+    }
+    catch (error) {
+        console.error("Error message: ", error);
+    }
+};
+
+export const postImage = async (image) => {
+    try {
+        await axios.post("http://localhost:8080/students", student);
     }
     catch (error) {
         console.error("Error message: ", error);
