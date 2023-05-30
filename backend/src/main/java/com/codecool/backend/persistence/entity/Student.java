@@ -13,13 +13,13 @@ public final class Student {
     private String name;
     private String description;
     private String project;
-    private String imgSrc; // i.e. imageSource, image
+    private String image;
 
-    public Student(String name, String description, String project, String imgSrc) {
+    public Student(String name, String description, String project, String image) {
         this.name = name;
         this.description = description;
         this.project = project;
-        this.imgSrc = imgSrc;
+        this.image = image;
     }
 
     public Student() {
@@ -57,24 +57,25 @@ public final class Student {
         this.project = project;
     }
 
-    public String getImgSrc() {
-        return imgSrc;
+    public String getImage() {
+        return image;
     }
 
-    public void setImgSrc(String imgSrc) {
-        this.imgSrc = imgSrc;
+    public void setImage(String image) {
+        this.image = image;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, description, project, imgSrc);
+        return Objects.hash(id, name, description, project, image);
     }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
         Student student = (Student) obj;
         return id == student.id && Objects.equals(name, student.name) && Objects.equals(description, student.description)
-                && Objects.equals(project, student.project) && Objects.equals(imgSrc, student.imgSrc);
+               && Objects.equals(project, student.project) && Objects.equals(image, student.image);
     }
 }
