@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 
 import officePurple from "../../assets/landing/officePurple.png";
@@ -12,12 +12,13 @@ import Logo from "../../assets/codeCool_Logo.png";
 
 import { Link } from "react-router-dom";
 
-import { UilBracketsCurly } from "@iconscout/react-unicons";
-import { UilCodeBranch } from "@iconscout/react-unicons";
-import { UilGithubAlt } from "@iconscout/react-unicons";
-import { UilDatabase } from "@iconscout/react-unicons";
-import { UilLaptop } from "@iconscout/react-unicons";
-import Footer from "../../Components/Footer";
+import { UilGlobe } from "@iconscout/react-unicons";
+import { UilUsersAlt } from "@iconscout/react-unicons";
+import { UilDesktop } from "@iconscout/react-unicons";
+import { UilBagAlt } from "@iconscout/react-unicons";
+import { UilStar } from "@iconscout/react-unicons";
+import StudentsGridLanding from "../../Components/StudentsGridLanding";
+import { fetchStudentLimit } from "../../Utils/fetchMethods";
 
 import "./LandingPage.css";
 
@@ -30,6 +31,13 @@ const LandingPage = () => {
     AOS.init({ duration: 1000 });
   }, []);
 
+  const [students, setStudents] = useState([]);
+
+  useEffect(() => {
+    fetchStudentLimit(3).then((data) => {
+      setStudents(data?._embedded.students);
+    });
+  }, []);
   return (
     <div className="landing-page-container">
       <Parallax pages={5} ref={ref} className="background-landing">
@@ -66,42 +74,82 @@ const LandingPage = () => {
             </Link>
             <div className="example-container">
               <div data-aos="zoom-in-up" className="landing-container">
-                <UilBracketsCurly className="icons-landing" />
+                <UilGlobe className="icons-landing" />
                 <div className="landing-info-container">
-                  <span>Lorem ipsum dolor sit amet.</span>
-                  <span>Lorem, ipsum.</span>
+                  <p
+                    style={{
+                      fontSize: "3rem",
+                      textAlign: "center",
+                      marginTop: "2rem",
+                    }}
+                  >
+                    4
+                  </p>
+                  <span>Standorte in Europa</span>
                 </div>
               </div>
 
               <div data-aos="zoom-in-up" className="landing-container">
-                <UilCodeBranch className="icons-landing" />
+                <UilUsersAlt className="icons-landing" />
                 <div className="landing-info-container">
-                  <span>Lorem ipsum dolor sit amet.</span>
-                  <span>Lorem, ipsum.</span>
+                  <p
+                    style={{
+                      fontSize: "3rem",
+                      textAlign: "center",
+                      marginTop: "2rem",
+                    }}
+                  >
+                    2000+
+                  </p>
+                  <span>Absolvent*innen erfolgreich vermittelt</span>
                 </div>
               </div>
 
               <div data-aos="zoom-in-up" className="landing-container">
-                <UilGithubAlt className="icons-landing" />
+                <UilDesktop className="icons-landing" />
                 <div className="landing-info-container">
-                  <span>Lorem ipsum dolor sit amet.</span>
-                  <span>Lorem, ipsum.</span>
+                  <p
+                    style={{
+                      fontSize: "3rem",
+                      textAlign: "center",
+                      marginTop: "2rem",
+                    }}
+                  >
+                    98%
+                  </p>
+                  <span>Arbeiten in Tech-Jobs</span>
                 </div>
               </div>
 
               <div data-aos="zoom-in-up" className="landing-container">
-                <UilDatabase className="icons-landing" />
+                <UilBagAlt className="icons-landing" />
                 <div className="landing-info-container">
-                  <span>Lorem ipsum dolor sit amet.</span>
-                  <span>Lorem, ipsum.</span>
+                  <p
+                    style={{
+                      fontSize: "3rem",
+                      textAlign: "center",
+                      marginTop: "2rem",
+                    }}
+                  >
+                    30+
+                  </p>
+                  <span>Zufriedene Unternehmenskunden</span>
                 </div>
               </div>
 
               <div data-aos="zoom-in-up" className="landing-container">
-                <UilLaptop className="icons-landing" />
+                <UilStar className="icons-landing" />
                 <div className="landing-info-container">
-                  <span>Lorem ipsum dolor sit amet.</span>
-                  <span>Lorem, ipsum.</span>
+                  <p
+                    style={{
+                      fontSize: "3rem",
+                      textAlign: "center",
+                      marginTop: "2rem",
+                    }}
+                  >
+                    30%
+                  </p>
+                  <span>Anteil an weiblichen Developern</span>
                 </div>
               </div>
             </div>
@@ -123,10 +171,10 @@ const LandingPage = () => {
             <h2>Unsere IT-Talente bei unseren Partnern</h2>
             <div className="sucess-container">
               <div className="video-landing-container">
-                <p>Unser Codecool Student bei unserem Partner Smatrics</p>
+                <h3>Unser Codecool Student bei unserem Partner Smatrics</h3>
                 <iframe
-                  width="770"
-                  height="415"
+                  width="800"
+                  height="450"
                   src="https://www.youtube.com/embed/qyV_A9wRHO8?start=1"
                   title="YouTube video player"
                   frameBorder="0"
@@ -134,7 +182,12 @@ const LandingPage = () => {
                   allowFullScreen
                 ></iframe>
               </div>
-              <div className="students-landing-container"></div>
+              <div className="students-landing-container">
+                <StudentsGridLanding  studentsList={students} />
+              {/* <h3>test</h3>
+              <h3>test</h3>
+              <h3>test</h3> */}
+              </div>
             </div>
           </div>
         </ParallaxLayer>
@@ -236,7 +289,6 @@ const LandingPage = () => {
               <h2>+43 676 557 4252</h2>
               <h2>business@codecool.com</h2>
             </div>
-           
           </div>
         </ParallaxLayer>
       </Parallax>
