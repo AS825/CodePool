@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import "./Body.css";
+import "./Slideshow.css";
 
 const slideStyles = {
   width: "50%",
