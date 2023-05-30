@@ -9,3 +9,10 @@ spring:
     console:
       enabled: true
       path: /h2-console
+  data:
+    rest:
+      base-path: /api
+      default-page-size: 12
+
+server:
+  port: 8090

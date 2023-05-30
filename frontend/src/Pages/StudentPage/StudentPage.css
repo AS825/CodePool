@@ -1,0 +1,137 @@
+.link-container {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+}
+
+.card-img-student {
+  position: absolute;
+  left: 10%;
+  top: 11%;
+  width: 70%;
+  transform: translateX(calc(var(--hover) * -10%))
+    scale(calc(0.9 + (var(--hover) * 0.2)));
+  transition: transform 0.2s;
+}
+.Uppercase {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.description-img {
+  text-align: justify;
+  width: 350px;
+}
+.article-container {
+  width: 25%;
+}
+
+
+/* ---------------- Table ------------------*/
+
+table.unstyledTable {
+  border: 0px solid #000000;
+  text-align: left;
+}
+
+.table-info {
+  padding-left: 3rem;
+}
+
+table.unstyledTable td,
+table.unstyledTable th {
+  margin: 0;
+  padding-block: 0.3rem;
+}
+
+/* ---------------- Grid ------------------*/
+.student-details-container {
+  margin-top: 5.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-inline: 8rem;
+  padding-block: 2rem;
+}
+
+.student-details-container-right {
+  margin-left: 5rem;
+  padding-right: 5rem;
+  text-align: justify;
+  max-width: 55rem;
+}
+
+.journey-header {
+  margin-top: 0;
+}
+
+/* ---------------- Button ------------------*/
+.box {
+  font-size: 1.3rem;
+  height: auto;
+  float: left;
+  transition: 0.5s linear;
+  position: relative;
+  display: block;
+  overflow: hidden;
+  padding-inline: 25px;
+  padding-block: 15px;
+  text-align: center;
+  margin: 0 5px;
+  background: transparent;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.box:before {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  width: 100%;
+  border-bottom: 4px solid transparent;
+  border-left: 4px solid transparent;
+  box-sizing: border-box;
+  transform: translateX(100%);
+}
+
+.box:after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  border-top: 4px solid transparent;
+  border-right: 4px solid transparent;
+  box-sizing: border-box;
+  transform: translateX(-100%);
+}
+
+.box:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.box:hover:before {
+  border-color: #00ffcc;
+  height: 100%;
+  transform: translateX(0);
+  transition: 0.3s transform linear, 0.3s height linear 0.3s;
+}
+
+.box:hover:after {
+  border-color: #7700ff;
+  height: 100%;
+  transform: translateX(0);
+  transition: 0.3s transform linear, 0.3s height linear 0.5s;
+}
+
+button {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background: transparent;
+}

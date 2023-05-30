@@ -1,3 +1,86 @@
-.students {
-  margin-top: 200px;
+
+.students__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  padding-inline: 8rem;
+  padding-block: 2rem;
 }
+
+/* ------------------------ Card -------------------------------*/
+.student-header {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-size: 3.5rem;
+}
+
+.sub-title {
+  margin-top: -2rem;
+  font-size: 1.5rem;
+}
+
+.card-grid-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  flex-wrap: wrap;
+  
+}
+
+
+
+/* figure {
+  cursor: pointer;
+  width: 350px;
+  aspect-ratio: 1/1;
+  --bg: hsl(250 59% calc(82% - (var(--hover) * 10%)));
+  --accent: hsl(0, 0%, 100%);
+  transition: 0.2s;
+  background: radial-gradient(
+      circle at top left,
+      var(--accent),
+      transparent 75%
+    ),
+    var(--bg);
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.5rem;
+} */
+
+figure:hover,
+figure:hover ~ figure {
+  filter: none;
+}
+.card-img {
+  position: absolute;
+  left: 10%;
+  top: 11%;
+  width: 70%;
+  transform: translateX(calc(var(--hover) * -10%))
+    scale(calc(0.9 + (var(--hover) * 0.2)));
+  transition: transform 0.2s;
+}
+
+.student-description {
+  text-align: justify;
+  padding-right: 7rem;
+  margin-top: -1rem;
+  margin-top: -1rem;
+}
+
+article {
+  --hover: 0;
+}
+
+article:hover {
+  --hover: 1;
+}
+
+/* ---------------- AOS ---------------- */
