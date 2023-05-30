@@ -25,9 +25,9 @@ const LandingPage = () => {
     const fetchData = async () => {
       await fetchGraduates().then((data) => setGraduates(data));
       await fetchOfficePersonal().then((data) => setOfficePersonal(data));
-      fetchStudentLimit(3).then((data) => {
+      /* fetchStudentLimit(3).then((data) => {
         setStudents(data?._embedded.students);
-      });
+      });*/
     };
 
     fetchData();
