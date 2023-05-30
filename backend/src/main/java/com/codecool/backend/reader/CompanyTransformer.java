@@ -1,7 +1,7 @@
 package com.codecool.backend.reader;
 
 
-import com.codecool.backend.model.entity.Company;
+import com.codecool.backend.persistence.entity.Company;
 
 public class CompanyTransformer implements DataTransformer<Company> {
     @Override

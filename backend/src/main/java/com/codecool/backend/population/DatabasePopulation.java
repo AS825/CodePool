@@ -1,9 +1,13 @@
 package com.codecool.backend.population;
 
+import com.codecool.backend.io.FileReader;
 import com.codecool.backend.persistence.entity.Company;
 import com.codecool.backend.persistence.entity.Student;
 import com.codecool.backend.persistence.repository.CompanyRepository;
 import com.codecool.backend.persistence.repository.StudentRepository;
+import com.codecool.backend.reader.CompanyTransformer;
+import com.codecool.backend.reader.DataReader;
+import com.codecool.backend.reader.StudentTransformer;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

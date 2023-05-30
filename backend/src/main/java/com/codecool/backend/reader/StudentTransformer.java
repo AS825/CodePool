@@ -1,7 +1,7 @@
 package com.codecool.backend.reader;
 
-import com.codecool.backend.model.entity.Student;
 
+import com.codecool.backend.persistence.entity.Student;
 
 public class StudentTransformer implements DataTransformer<Student> {
     @Override
