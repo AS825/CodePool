@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const path = "http://localhost:8090/";
+const path = "http://localhost:8080/";
 
 export const fetchMessage = async () => {
   try {
