@@ -21,12 +21,16 @@ import java.util.List;
 public class DatabasePopulation {
 
     @Bean
-    ApplicationRunner populate(StudentRepository studentRepository, CompanyRepository companyRepository, GraduateRepository graduateRepository, com.codecool.backend.repository.OfficePersonalRepository officePersonalRepository) {
+    ApplicationRunner populate(
+            StudentRepository studentRepository,
+            CompanyRepository companyRepository,
+            GraduateRepository graduateRepository,
+            com.codecool.backend.repository.OfficePersonalRepository officePersonalRepository) {
         return args -> {
             String companyPath = "src/main/resources/csvFiles/Companies-Mock.csv";
             String studentsPath = "src/main/resources/csvFiles/Students-Mock.csv";
-            String graduatesPath="src/main/resources/csvFiles/Graduates.csv";
-            String officePersonalPath="src/main/resources/csvFiles/OfficePersonal.csv";
+            String graduatesPath = "src/main/resources/csvFiles/Graduates.csv";
+            String officePersonalPath = "src/main/resources/csvFiles/OfficePersonal.csv";
             FileReader fileReader = new FileReader();
             DataReader dataReader = new DataReader(fileReader);
             StudentTransformer studentTransformer = new StudentTransformer();
@@ -36,15 +40,13 @@ public class DatabasePopulation {
             GraduateTransformer graduateTransformer = new GraduateTransformer(base64Converter);
             List<Student> students = dataReader.read(studentsPath, studentTransformer);
             List<Company> companies = dataReader.read(companyPath, companyTransformer);
-            List<Graduate> graduates = dataReader.read(graduatesPath,graduateTransformer);
-            List<OfficePersonal> officePersonal = dataReader.read(officePersonalPath,officePersonalTransformer);
+            List<Graduate> graduates = dataReader.read(graduatesPath, graduateTransformer);
+            List<OfficePersonal> officePersonal = dataReader.read(officePersonalPath, officePersonalTransformer);
 
             companyRepository.saveAll(companies);
             studentRepository.saveAll(students);
             graduateRepository.saveAll(graduates);
             officePersonalRepository.saveAll(officePersonal);
-
-
         };
     }
 
