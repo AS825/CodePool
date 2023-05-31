@@ -9,7 +9,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("students")
-@CrossOrigin(origins = "*")
 public class StudentEndpoint {
 
     private final StudentService studentService;

@@ -14,7 +14,7 @@ function getRandomColor() {
 
 function StudentPage() {
   const { id } = useParams();
-  const [student, setStudent] = useState(null);
+  const [student, setStudent] = useState();
 
   const bgStyle = {
     cursor: "pointer",
@@ -33,14 +33,16 @@ function StudentPage() {
     AOS.init({ duration: 1000 });
   }, []);
   useEffect(() => {
-    fetchStudent(id).then((data) => {
+    fetchStudent().then((data) => {
       setStudent(data);
     });
-  }, [id]);
+  }, []);
 
   if (!student) {
     return <div>Loading...</div>;
   }
+
+  console.log(student);
 
   return (
     <div>
@@ -56,7 +58,7 @@ function StudentPage() {
             </figure>
           </article>
           <h1 data-aos="fade-left">Name: {student.name}</h1>
-          <table data-aos="zoom-in-up"  className="unstyledTable">
+          <table data-aos="zoom-in-up" className="unstyledTable">
             <thead></thead>
             <tbody>
               <tr>
@@ -78,7 +80,10 @@ function StudentPage() {
             </tbody>
           </table>
         </div>
-        <div data-aos="zoom-in-left" className="student-details-container-right">
+        <div
+          data-aos="zoom-in-left"
+          className="student-details-container-right"
+        >
           <h1 className="journey-header"> My Journey</h1>
           <span>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum non
@@ -108,7 +113,7 @@ function StudentPage() {
           </span>
         </div>
       </div>
-      <div  data-aos="fade-up" className="link-container">
+      <div data-aos="fade-up" className="link-container">
         <Link to={`/students/`}>
           <button className="box">Back to all Students</button>
         </Link>

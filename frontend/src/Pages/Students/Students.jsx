@@ -4,7 +4,7 @@ import {
   fetchNextPageOfStudents,
 } from "../../Utils/fetchMethods";
 import StudentsGrid from "../../Components/StudentsGrid";
-import LoadingAnimation from "../../Components/LoadingAnimation"; 
+import LoadingAnimation from "../../Components/LoadingAnimation";
 import "./Students.css";
 
 function Students() {
@@ -14,7 +14,7 @@ function Students() {
 
   useEffect(() => {
     fetchStudents().then((data) => {
-      setStudents(data?._embedded.students);
+      setStudents(data);
     });
   }, []);
 
@@ -41,14 +41,15 @@ function Students() {
     }
   };
 
+  console.log(students);
   return (
     <div className="students">
       <div className="student-header">
         <h1 className="title"> CodeCool Students</h1>
         <h3 className="sub-title">Jobhunters</h3>
       </div>
-      <StudentsGrid studentsList={students} />
-      <LoadingAnimation loading={loading} />
+      {/* <StudentsGrid studentsList={students} />
+      <LoadingAnimation loading={loading} /> */}
     </div>
   );
 }

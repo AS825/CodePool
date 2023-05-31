@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import AOS from 'aos';
+import AOS from "aos";
 import "aos/dist/aos.css";
 
 function getRandomColor() {
@@ -11,17 +11,23 @@ function getRandomColor() {
   return `hsl(${hue} ${saturation}% ${lightness}%)`;
 }
 
-const effects = ["fade-up", "fade-down", "zoom-in","fade-right", "fade-left", "flip-right" ];
+const effects = [
+  "fade-up",
+  "fade-down",
+  "zoom-in",
+  "fade-right",
+  "fade-left",
+  "flip-right",
+];
 function getRandomEffect() {
   const randomIndex = Math.floor(Math.random() * effects.length);
   return effects[randomIndex];
 }
 
 function StudentCard({ student }) {
-
   useEffect(() => {
-    AOS.init({duration: 1000})
-  },[])
+    AOS.init({ duration: 1000 });
+  }, []);
 
   const getIdFromHref = () => {
     const href = student._links.student.href;
@@ -32,7 +38,7 @@ function StudentCard({ student }) {
     }
   };
 
-  const studentId = getIdFromHref();
+  // const studentId = getIdFromHref();
 
   const bgStyle = {
     cursor: "pointer",
@@ -45,7 +51,7 @@ function StudentCard({ student }) {
     margin: "0",
     position: "relative",
     overflow: "hidden",
-    borderRadius: "1.5rem"
+    borderRadius: "1.5rem",
   };
   const maxDescriptionLength = 45;
   const truncatedDescription =
@@ -53,20 +59,20 @@ function StudentCard({ student }) {
       ? student.description.substring(0, 30) + "..."
       : student.description;
 
-      const randomEffect = getRandomEffect();
+  const randomEffect = getRandomEffect();
 
   return (
     <>
-      <div >
-      <article data-aos={randomEffect}>
+      <div>
+        <article data-aos={randomEffect}>
           <figure style={bgStyle}>
-            <Link to={`/students/${studentId}`}>
-              <img
-                className="card-img"
-                src="https://assets.codepen.io/605876/person.png"
-                alt=""
-              />
-            </Link>
+            {/* <Link to={`/students/`}> */}
+            <img
+              className="card-img"
+              src="https://assets.codepen.io/605876/person.png"
+              alt=""
+            />
+            {/* </Link> */}
           </figure>
           <h2>{student.name}</h2>
           <p className="student-description">{truncatedDescription}</p>
