@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './StudentForm.css';
 
 const StudentForm = ({
@@ -9,7 +9,10 @@ const StudentForm = ({
 
   const initFormObject = () => {
     return {
-      name: "", 
+      firstName: "", 
+      lastName: "", 
+      age: "", 
+      eMail: "",
       description: "", 
       project: "",
       image: "",
@@ -54,46 +57,69 @@ const StudentForm = ({
   return (
     <div className="component">
       <div className="container">
-        <div className="title"> Create your own page </div>
+        <div className="title"> Create your own profile </div>
         <div className="content">
           <div className="image-section">
-            {uploadedImage ? <img src={uploadedImage} className="image" /> : <img src="" className="image"/> }
-            <label htmlFor="image-input" className="image-label">Select Image
+            {uploadedImage ? <img src={uploadedImage} className="image" /> : <img src="/person.png" className="image"/> }
+            <label htmlFor="image-input" className="image-label">Upload Image
               <input id="image-input" name="image" type="file" className="image-input" onChange={(event) => onFileUpload(event)}/>
             </label>
           </div>
           <div className="data-section">
-            <div className="form-element"> 
-              <div className="form-element-heading">Name: </div>
-              <input
-                className="input-name"
-                value={formObject.name}
-                onChange={event => updateFormObject(event.target.name, event.target.value)}
-                name="name"
-                id="name"
-                placeholder="Enter your name"
-              />
-            </div>
-            <div className="form-element"> 
-              <div className="form-element-heading">Description: </div>
-              <textarea
-                className="description-textarea"
-                value={formObject.description}
-                onChange={event => updateFormObject(event.target.name, event.target.value)}
-                name="description"
-                placeholder="Add a description of yourself and your abilities"
-              />
-            </div>
-            <div className="form-element"> 
-              <div className="form-element-heading">Project: </div>
-              <textarea
-                className="project-textarea"
-                value={formObject.project}
-                onChange={event => updateFormObject(event.target.name, event.target.value)}
-                name="project"
-                placeholder="Describe one of your projects and its Tech-Stack"
-              />
-            </div>
+              <div className="line-container">
+                <input
+                  className="input-text"
+                  type="text"
+                  value={formObject.firstName}
+                  onChange={event => updateFormObject(event.target.name, event.target.value)}
+                  name="firstName"
+                  placeholder="First Name"
+                />
+                <input
+                  className="input-text"
+                  type="text"
+                  value={formObject.lastName}
+                  onChange={event => updateFormObject(event.target.name, event.target.value)}
+                  name="lastName"
+                  placeholder="Last Name"
+                />
+              </div>
+              <div className="line-container">
+                <input
+                  className="input-text"
+                  type="text"
+                  value={formObject.age}
+                  onChange={event => updateFormObject(event.target.name, event.target.value)}
+                  name="age"
+                  placeholder="Age"
+                />
+                <input
+                  className="input-text"
+                  type="email"
+                  value={formObject.eMail}
+                  onChange={event => updateFormObject(event.target.name, event.target.value)}
+                  name="eMail"
+                  placeholder="E-Mail"
+                />
+              </div>
+              <div className="line-container">
+                <textarea
+                  className="description-textarea"
+                  value={formObject.description}
+                  onChange={event => updateFormObject(event.target.name, event.target.value)}
+                  name="description"
+                  placeholder="Add a description of yourself and your abilities"
+                />
+              </div>
+              <div className="line-container">
+                <textarea
+                  className="project-textarea"
+                  value={formObject.project}
+                  onChange={event => updateFormObject(event.target.name, event.target.value)}
+                  name="project"
+                  placeholder="Describe one of your projects and its Tech-Stack"
+                />
+              </div>
             <div className="buttons">
               <button className="button" onClick={() => onSubmit(formObject)} disabled={disabled}>
                 Submit
