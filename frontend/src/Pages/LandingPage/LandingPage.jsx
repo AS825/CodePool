@@ -75,7 +75,7 @@ const LandingPage = () => {
                   backgroundColor: "white",
                   paddingInline: "1em",
                   fontSize: "1.5rem",
-                  border: "solid 3px black",
+                 
                   borderRadius: "5px",
                 }}
                 className="box"

@@ -11,8 +11,8 @@ function getRandomColor() {
   return `hsl(${hue} ${saturation}% ${lightness}%)`;
 }
 
+const effects = ["fade-up", "fade-down", "zoom-in","fade-right", "fade-left", "flip-right" ];
 function getRandomEffect() {
-  const effects = ["fade-up", "fade-down", "zoom-in","fade-right", "fade-left", "flip-right" ];
   const randomIndex = Math.floor(Math.random() * effects.length);
   return effects[randomIndex];
 }
