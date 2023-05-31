@@ -4,13 +4,18 @@ import {
   fetchNextPageOfStudents,
 } from "../../Utils/fetchMethods";
 import StudentsGrid from "../../Components/StudentsGrid";
-import LoadingAnimation from "../../Components/LoadingAnimation"; 
+import LoadingAnimation from "../../Components/LoadingAnimation";
 import "./Students.css";
 
 function Students() {
   const [students, setStudents] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     fetchStudents().then((data) => {
@@ -29,11 +34,6 @@ function Students() {
     });
   };
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   const handleScroll = () => {
     const { scrollTop, clientHeight, scrollHeight } = document.documentElement;
     if (scrollTop + clientHeight >= scrollHeight - 100) {
@@ -41,6 +41,7 @@ function Students() {
     }
   };
 
+  console.log(students);
   return (
     <div className="students">
       <div className="student-header">
