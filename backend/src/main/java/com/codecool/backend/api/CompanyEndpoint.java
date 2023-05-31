@@ -16,6 +16,7 @@ public class CompanyEndpoint {
         this.companyService = companyService;
     }
 
+    
     @GetMapping
     List<Company> get() {
         return companyService.findAll();
