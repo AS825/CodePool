@@ -32,6 +32,7 @@ function Slideshow({ graduates }) {
   const goToSlide = (slideIndex) => {
     setCurrentIndex(slideIndex);
   };
+
   return (
     <div className="sliderStyles">
       <div>
@@ -45,7 +46,7 @@ function Slideshow({ graduates }) {
 
       <div className="container-graduates" style={{ display: "flex" }}>
         <img
-          src={`data:image/jpeg;base64,${graduates[currentIndex].imageSource}`}
+          src={`data:image/png;base64,${graduates[currentIndex].imageSource}`}
           className="graduant container_image"
         ></img>
         <div className="description">
