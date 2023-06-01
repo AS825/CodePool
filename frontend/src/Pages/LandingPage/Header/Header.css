@@ -1,11 +1,11 @@
-h1 {
+/* h1 {
   font-family: var(--main-font-family);
   text-align: center;
   margin-top: 10rem;
   letter-spacing: 2px;
   font-size: 4rem;
   padding-top: 3.5rem;
-}
+} */
 
 .headLine {
   background-image: linear-gradient(
