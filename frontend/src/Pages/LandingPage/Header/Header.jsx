@@ -53,7 +53,7 @@ function Header() {
                 marginTop: "2rem",
               }}
             >
-              2000+
+              14+
             </p>
             <span>Absolvent*innen erfolgreich vermittelt</span>
           </div>
@@ -101,7 +101,7 @@ function Header() {
                 marginTop: "2rem",
               }}
             >
-              30%
+              10%
             </p>
             <span>Anteil an weiblichen Developern</span>
           </div>

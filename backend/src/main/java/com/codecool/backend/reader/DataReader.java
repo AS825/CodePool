@@ -13,7 +13,7 @@ public class DataReader {
         this.fileReader = fileReader;
     }
 
-    public <ELEMENT> List<ELEMENT> read(String path, DataTransformer<ELEMENT> dataTransformer) {
+    public <E> List<E> read(String path, DataTransformer<E> dataTransformer) {
         return fileReader.read(path)
                 .skip(1)
                 .map(line -> {

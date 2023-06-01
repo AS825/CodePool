@@ -4,10 +4,7 @@ import "../LandingPage.css";
 function Card({ officePersonal }) {
   return (
     <div className="business-container-card">
-      <img
-        src={`data:image/jpeg;base64,${officePersonal.imageSource}`}
-        alt=""
-      />
+      <img src={`data:image/png;base64,${officePersonal.imageSource}`} alt="" />
       <div className="business-card-text">
         <h2>
           {officePersonal.firstName} {officePersonal.lastName}
