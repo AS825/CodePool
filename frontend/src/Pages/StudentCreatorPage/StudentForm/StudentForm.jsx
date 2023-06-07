@@ -16,6 +16,7 @@ const StudentForm = ({ onSubmit, onCancel, disabled }) => {
       description: "",
       project: "",
       image: "",
+      techStack: []
     };
   };
 
@@ -87,7 +88,13 @@ const StudentForm = ({ onSubmit, onCancel, disabled }) => {
           />
         );
       case 3:
-        return <StudentFormTechStack previous={decreaseCurrentStep} />;
+        return ( 
+          <StudentFormTechStack 
+              previous={decreaseCurrentStep} 
+              formObject={formObject}
+              setFormObject={setFormObject}
+          />
+        );
     }
   };
 
@@ -99,7 +106,7 @@ const StudentForm = ({ onSubmit, onCancel, disabled }) => {
           formSteps={formSteps}
           currentStep={currentStep}
         />
-        <div className="form">
+        <div className="form-container">
           {renderFormPart()}
         </div>
       </div>
