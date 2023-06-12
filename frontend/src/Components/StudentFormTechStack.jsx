@@ -1,7 +1,6 @@
-import React from "react";
 import "../Pages/StudentCreatorPage/StudentForm/StudentForm.css";
 
-const StudentFormTechStack = ({ previous, formObject, setFormObject }) => {
+const StudentFormTechStack = ({ previous, formObject, setFormObject, onSubmit, onCancel }) => {
   const iconSources = [];
   for (let i = 1; i < 25; i++) {
     iconSources[i] = "/tech" + i + ".png";
@@ -53,6 +52,12 @@ const StudentFormTechStack = ({ previous, formObject, setFormObject }) => {
       <div className="buttons">
         <button className="button" onClick={() => previous()}>
           Previous
+        </button>
+        <button className="button" onClick={() => onSubmit(formObject)}>
+          Submit
+        </button>
+        <button className="button" onClick={() => onCancel()}>
+          Cancel
         </button>
       </div>
     </div>
