@@ -4,15 +4,22 @@ const StudentFormIntro = ({ next }) => {
   return (
     <div className="form">
       <div className="form-heading">
-        Background-Removal of your profile image
+        Please remove the background of your profile image first
       </div>
       <div className="form-text">
-        For your profile image it is necessary to remove the background of the
-        image. You can do that on{" "}
-        <a href="https://www.remove.bg/de">this webpage</a>:
+        <div>For your profile image it is necessary to </div>
+        <div>
+          remove the background of the image. You can easily do that on
+          <a href="https://www.remove.bg/de">this webpage</a>:
+        </div>
       </div>
       <div className="image-backgroundRemoval-container">
-        <img src="/backgroundRemoval.png" className="image-backgroundRemoval" />
+        <a href="https://www.remove.bg/de">
+          <img
+            src="/backgroundRemoval.png"
+            className="image-backgroundRemoval"
+          />
+        </a>
       </div>
 
       <div className="content-1C"></div>
