@@ -3,7 +3,7 @@ import LogoWhite from "../../assets/landing/logo-white_CC.png";
 import Logo from "../../assets/codeCool_Logo.png";
 import { NavLink, Outlet, useLocation } from "react-router-dom";
 import { UilUser } from "@iconscout/react-unicons";
-import Footer from "../../Components/Footer";
+import { Footer } from "../../Components/Footer";
 const Navbar = () => {
   const location = useLocation();
 

@@ -4,7 +4,7 @@ import { fetchStudent } from "../Utils/fetchMethods"
 
 
 // ContactForm component to display the contact form
-function ContactForm({ onClose }) {
+export default function ContactForm({ onClose }) {
   // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -30,5 +30,3 @@ function ContactForm({ onClose }) {
     </div>
   );
 }
-
-export default ContactForm;

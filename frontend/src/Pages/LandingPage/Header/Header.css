@@ -1,12 +1,3 @@
-h1 {
-  font-family: var(--main-font-family);
-  text-align: center;
-  margin-top: 10rem;
-  letter-spacing: 2px;
-  font-size: 4rem;
-  padding-top: 3.5rem;
-}
-
 .headLine {
   background-image: linear-gradient(
     to right top,
@@ -24,10 +15,20 @@ h1 {
     rgb(1, 234, 204, 0.8)
   );
 }
-.video {
+
+.headLine h1 {
+  font-family: var(--main-font-family);
+  text-align: center;
+  margin-top: 10rem;
+  letter-spacing: 2px;
+  font-size: 4rem;
+  padding-top: 3.5rem;
+}
+
+.headLine .video {
   text-align: center;
   margin-top: 5rem;
 }
-.fabio-video {
+.headLine  .fabio-video {
   padding-bottom: 3.5rem;
 }
