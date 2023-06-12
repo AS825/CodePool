@@ -1,50 +1,55 @@
+import { useEffect, useState } from "react";
 import "../Pages/StudentCreatorPage/StudentForm/StudentForm.css";
+import { getTechnologies } from "../Utils/fetchMethods";
 
 const StudentFormTechStack = ({ previous, formObject, setFormObject, onSubmit, onCancel }) => {
-  const iconSources = [];
-  for (let i = 1; i < 25; i++) {
-    iconSources[i] = "/tech" + i + ".png";
-    console.log(iconSources[i]);
-  }
+  const [technologies, setTechnologies] = useState(); 
 
-  const handleImageSelection = (imageId) => {
+  useEffect( () => {
+    getTechnologies()
+      .then(data => setTechnologies(data));
+  }, []);
+
+  const handleImageSelection = (technologie) => {
     setFormObject((prevFormObj) => {
-      if (formObject.techStack.includes(imageId)) {
+      if (formObject.technologies.includes(technologie)) {
         return {
           ...prevFormObj,
-          techStack: prevFormObj.techStack.filter((id) => id !== imageId),
+          technologies: prevFormObj.technologies.filter(tech => tech.id !== technologie.id),
         };
       } else {
         return {
           ...prevFormObj,
-          techStack: [...formObject.techStack, imageId],
+          technologies: [...formObject.technologies, technologie],
         };
       }
     });
   };
 
-  console.log(formObject.techStack);
+  if(!technologies) {
+    return <div> Loading ... </div>
+  }
 
-  return (
+  return (    
     <div className="form">
       <div className="form-heading">
         Please select your Tech-Stack!
       </div>
       <div className="content-1C">
         <div className="tech-stack-icons">
-          {iconSources.map((iconSource, index) => (
+          {technologies.map(technologie => (
             <img
-              key={index}
-              src={iconSource}
+              key={technologie.id}
+              src={`data:image/png;base64,${technologie.image}`}
               style={{
-                filter: formObject.techStack.includes(index)
+                filter: formObject.technologies.includes(technologie)
                   ? "none"
                   : "grayscale(100%)",
-                opacity: formObject.techStack.includes(index) ? "1" : "0.4",
+                opacity: formObject.technologies.includes(technologie) ? "1" : "0.4",
                 cursor: "pointer",
               }}
               className="tech-icon"
-              onClick={() => handleImageSelection(index)}
+              onClick={() => handleImageSelection(technologie)}
             />
           ))}
         </div>
