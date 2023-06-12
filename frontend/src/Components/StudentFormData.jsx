@@ -55,33 +55,33 @@ const StudentFormData = ({
             <input
               className="input-text"
               type="email"
-              value={formObject.eMail}
+              value={formObject.email}
               onChange={(event) =>
                 updateFormObject(event.target.name, event.target.value)
               }
-              name="eMail"
+              name="email"
               placeholder="E-Mail"
             />
           </div>
           <div className="line-container">
             <textarea
               className="description-textarea"
-              value={formObject.description}
+              value={formObject.selfDescription}
               onChange={(event) =>
                 updateFormObject(event.target.name, event.target.value)
               }
-              name="description"
+              name="selfDescription"
               placeholder="Add a description of yourself and your abilities"
             />
           </div>
           <div className="line-container">
             <textarea
               className="project-textarea"
-              value={formObject.project}
+              value={formObject.projectDescription}
               onChange={(event) =>
                 updateFormObject(event.target.name, event.target.value)
               }
-              name="project"
+              name="projectDescription"
               placeholder="Describe one of your projects and its Tech-Stack"
             />
           </div>
