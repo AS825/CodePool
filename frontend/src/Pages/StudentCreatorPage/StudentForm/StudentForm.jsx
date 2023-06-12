@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState } from "react";
 import "./StudentForm.css";
 import StudentFormProgressBar from "../../../Components/StudentFormProgressBar";
 import StudentFormIntro from "../../../Components/StudentFormIntro";
@@ -6,17 +6,17 @@ import StudentFormImageUpload from "../../../Components/StudentFormImageUpload";
 import StudentFormData from "../../../Components/StudentFormData";
 import StudentFormTechStack from "../../../Components/StudentFormTechStack.jsx";
 
-const StudentForm = ({ onSubmit, onCancel, disabled }) => {
+const StudentForm = ({ onSubmit, onCancel }) => {
   const initFormObject = () => {
     return {
       firstName: "",
       lastName: "",
       age: "",
-      eMail: "",
-      description: "",
-      project: "",
+      email: "",
+      selfDescription: "",
+      projectDescription: "",
       image: "",
-      techStack: []
+      technologies: [],
     };
   };
 
@@ -88,11 +88,13 @@ const StudentForm = ({ onSubmit, onCancel, disabled }) => {
           />
         );
       case 3:
-        return ( 
-          <StudentFormTechStack 
-              previous={decreaseCurrentStep} 
-              formObject={formObject}
-              setFormObject={setFormObject}
+        return (
+          <StudentFormTechStack
+            previous={decreaseCurrentStep}
+            formObject={formObject}
+            setFormObject={setFormObject}
+            onSubmit={onSubmit} 
+            onCancel={onCancel}
           />
         );
     }
@@ -106,9 +108,7 @@ const StudentForm = ({ onSubmit, onCancel, disabled }) => {
           formSteps={formSteps}
           currentStep={currentStep}
         />
-        <div className="form-container">
-          {renderFormPart()}
-        </div>
+        <div className="form-container">{renderFormPart()}</div>
       </div>
     </div>
   );
