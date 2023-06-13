@@ -1,7 +1,7 @@
 package com.codecool.backend.service.welcomepage;
 
 import com.codecool.backend.persistence.repository.GraduateRepository;
-import com.codecool.backend.repository.OfficePersonalRepository;
+import com.codecool.backend.persistence.repository.OfficePersonalRepository;
 import org.junit.jupiter.api.Test;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.*;
@@ -24,8 +24,4 @@ class WelcomePageServiceTest {
         welcomePageService.getOfficePersonal();
         verify(officePersonalRepository).findAll();
     }
-
-
-
-
 }
