@@ -1,0 +1,313 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.component {
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  position: absolute;
+}
+
+.container {
+  width: 1200px;
+  margin: 50px auto;
+  margin-top: 150px;
+  text-align: center;
+  position: relative;
+  font-family: var(--main-font-family);
+  background: white;
+  z-index: 2;
+}
+
+.title {
+  text-align: left;
+  font-size: 1.8rem;
+  font-weight: 500;
+  position: relative;
+  margin-bottom: 40px;
+}
+/*
+.title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  height: 5px;
+  width: 380px;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+*/
+.form {
+  border: 0 none;
+  border-radius: 20px;
+  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+  padding: 50px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 20px;
+  width: 1200px;
+  height: 700px;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-heading {
+  display: flex;
+  justify-content: right;
+  text-align: right;
+  font-weight: 800;
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+.content-1C {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 1200px;
+  height: 500px;
+}
+
+.content-2C {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 1200px;
+  height: 500px;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+}
+
+.image-backgroundRemoval {
+  height: 400px;
+}
+
+.image-section {
+  width: 150px;
+  margin-top: 50px;
+}
+
+.tech-icon {
+  height: 80px;
+}
+
+.tech-stack-icons {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 50px;
+  justify-items: center;
+}
+
+.icon {
+  text-align: center;
+}
+
+.data-section {
+  width: 650px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.form-element-heading {
+  margin-bottom: 5px;
+}
+
+.line-container {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.input-text {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.input-text:last-child {
+  margin-right: 0;
+}
+
+.data-section input,
+.data-section textarea {
+  flex-shrink: 0;
+}
+
+.data-section input .data-section textarea {
+  border: solid 1px;
+  padding: 8px;
+  border-radius: 3px;
+}
+
+.data-section input:focus,
+.data-section textarea:focus {
+  outline: none;
+  border: none;
+  -webkit-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.data-section input {
+  margin: 4px 0 8px;
+  font-size: 0.9rem;
+  color: #282936;
+}
+
+input:not(:placeholder-shown):focus,
+input:not(:placeholder-shown) {
+  background-color: rgb(236, 255, 236);
+}
+
+textarea:not(:placeholder-shown):focus,
+textarea:not(:placeholder-shown) {
+  background-color: rgb(236, 255, 236);
+}
+
+.data-section textarea {
+  border: 1px solid;
+  margin: 4px 0 8px;
+  font-size: 0.9rem;
+  color: #656880;
+  height: 120px;
+  max-height: 160px;
+  resize: vertical;
+}
+
+.data-section input:last-child,
+.data-section input:last-child {
+  margin-right: 0;
+}
+
+textarea {
+  flex: 1;
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.8rem;
+  height: 150px;
+  font-family: var(--main-font-family);
+}
+
+input {
+  height: 35px;
+  padding-left: 10px;
+}
+
+.form-element {
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+button,
+.image-label {
+  height: 25px;
+  width: 100px;
+  margin: 15px 0;
+  border-radius: 5px;
+  border: 1px solid black;
+  color: black;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: white;
+}
+button:hover {
+  background: rgb(158, 157, 157);
+  color: white;
+}
+
+.image-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+  align-items: center;
+}
+
+.image {
+  width: 250px;
+}
+
+.image-input {
+  display: none;
+}
+
+.image-label {
+  width: 150px;
+}
+
+.image-label:hover {
+  background-color: #ccc;
+}
+
+.image-preview {
+  max-width: 200px;
+  margin-top: 10px;
+}
+
+/* Progressbar source: http://codepen.io/atakan/pen/gqbIz */
+#progressbar {
+  margin-bottom: 30px;
+  overflow: hidden;
+  /*CSS counters to number the steps*/
+  counter-reset: step;
+}
+#progressbar li {
+  list-style-type: none;
+  color: black;
+  text-transform: uppercase;
+  font-size: 12px;
+  width: 33.33%;
+  float: left;
+  position: relative;
+}
+#progressbar li:before {
+  content: counter(step);
+  counter-increment: step;
+  width: 20px;
+  line-height: 20px;
+  display: block;
+  font-size: 12px;
+  color: black;
+  background: #01e9cc;
+  border-radius: 3px;
+  margin: 0 auto 5px auto;
+}
+/*progressbar connectors*/
+#progressbar li:after {
+  content: "";
+  width: 120%;
+  height: 2px;
+  background: #01e9cc;
+  position: absolute;
+  left: -70%;
+  top: 9px;
+  z-index: -1; /*put it behind the numbers*/
+}
+#progressbar li:first-child:after {
+  /*connector not needed before the first step*/
+  content: none;
+}
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+#progressbar li.active ~ li:after {
+  background: rgb(161, 160, 160);
+  color: black;
+}
+
+#progressbar li.active ~ li:before {
+  background: rgb(161, 160, 160);
+  color: black;
+}
