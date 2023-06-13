@@ -1,4 +1,4 @@
-import {  useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import { fetchOfficePersonal, fetchGraduates } from "../../Utils/fetchMethods";
 import Header from "./Header/Header";
@@ -7,7 +7,6 @@ import Footer from "./Footer/Footer";
 import officePurple from "../../assets/landing/officePurple.png";
 import officeBlue from "../../assets/landing/officeBluePurple.png";
 
-import { fetchOfficePersonal, fetchGraduates } from "../../Utils/fetchMethods";
 import "./LandingPage.css";
 
 import AOS from "aos";
@@ -28,7 +27,6 @@ const LandingPage = () => {
     };
 
     fetchData();
-   
   }, []);
 
   return (
