@@ -3,7 +3,7 @@ package com.codecool.backend.service.welcomepage;
 import com.codecool.backend.model.entity.Graduate;
 import com.codecool.backend.model.entity.OfficePersonal;
 import com.codecool.backend.persistence.repository.GraduateRepository;
-import com.codecool.backend.repository.OfficePersonalRepository;
+import com.codecool.backend.persistence.repository.OfficePersonalRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
