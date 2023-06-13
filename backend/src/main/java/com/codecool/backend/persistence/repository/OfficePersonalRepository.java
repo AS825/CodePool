@@ -1,4 +1,4 @@
-package com.codecool.backend.repository;
+package com.codecool.backend.persistence.repository;
 
 import com.codecool.backend.model.entity.OfficePersonal;
 import org.springframework.data.jpa.repository.JpaRepository;
