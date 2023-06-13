@@ -1,6 +1,7 @@
 package com.codecool.backend.api;
 
 import com.codecool.backend.persistence.entity.Student;
+import com.codecool.backend.persistence.entity.Technology;
 import com.codecool.backend.service.StudentService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -12,6 +13,7 @@ import org.springframework.http.HttpMethod;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
+import java.util.List;
 import java.util.Optional;
 
 import static org.mockito.Mockito.verify;
@@ -43,9 +45,10 @@ class StudentEndpointTest {
     void getStudentById() throws Exception {
         long id = 1;
         String extendedUrl = url + "/" + id;
-        Student student = new Student("test", "test", "test", "test");
+        List<Technology> technologies = List.of(new Technology("javaIcon"));
+        Student student = new Student("testFirstName", "testLastName", "testAge", "testEmail", "testSelfDescription", "testProjectDescription", "testImage", technologies);
         when(studentService.findById(id)).thenReturn(Optional.of(student));
-        
+
         mockMvc.perform(get(extendedUrl))
                 .andExpect(status().isOk());
 
@@ -66,14 +69,18 @@ class StudentEndpointTest {
     @ParameterizedTest
     @ValueSource(strings = {"POST", "PUT"})
     void saveAndUpdateStudent(String httpMethodName) throws Exception {
-        Student student = new Student("TestStudent", "TestDescription", "TestProject", "TestImgSrc");
+        List<Technology> technologies = List.of(new Technology("javaIcon"));
+        Student student = new Student("testFirstName", "testLastName", "testAge", "testEmail", "testSelfDescription", "testProjectDescription", "testImage", technologies);
         String body = """
-                {"name": "TestStudent",
-                "description": "TestDescription",
-                "project": "TestProject",
-                "imgSrc": "TestImgSrc"}
+                {"firstName": "testFirstName",
+                "lastName": "testLastName",
+                "age": "testAge",
+                "email": "testEmail",
+                "selfDescription": "testSelfDescription",
+                "projectDescription": "testProjectDescription",
+                "image": "testImage",
+                "technologies": ["javaIcon"]}
                 """;
-        when(studentService.save(student)).thenReturn(student); // this seems unnecessary
 
         mockMvc.perform(MockMvcRequestBuilders.request(HttpMethod.valueOf(httpMethodName), url)
                         .contentType(APPLICATION_JSON)
