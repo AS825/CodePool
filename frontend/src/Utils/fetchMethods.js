@@ -3,7 +3,6 @@ import axios from "axios";
 const path = "http://localhost:8080/";
 const pathGraduates = "http://localhost:8080/graduates";
 const pathOfficePersonal = "http://localhost:8080/office-personal";
-const path = "http://localhost:8080/";
 
 export const fetchMessage = async () => {
   try {
