@@ -44,7 +44,7 @@ function ContactPage() {
   return (
     <>
       <div className="form-container">
-        <div className="container">
+        <div className="contact-container">
           <div data-aos="fade-down" className="container-social">
             <a className="link" href="https://business.codecool.com/de/">
               <div className="Logo-link animation">
