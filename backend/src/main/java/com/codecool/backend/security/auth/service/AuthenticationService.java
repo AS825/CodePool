@@ -36,14 +36,14 @@ public class AuthenticationService {
     }
 
     public AuthenticationResponse register(RegisterRequest request) {
-        UserDetails user = new User(
+        User user = new User(
                 request.getUsername(),
                 request.getEmail(),
                 passwordEncoder.encode(request.getPassword()),
                 request.getRole() == null ? Role.USER : request.getRole()
         );
 
-        UserDetails savedUser = userRepository.save(user);
+        User savedUser = userRepository.save(user);
         String jwtToken = jwtService.generateToken(user);
         saveUserToken(savedUser, jwtToken);
         return new AuthenticationResponse(
@@ -61,7 +61,7 @@ public class AuthenticationService {
                 )
         );
 
-        UserDetails user = userRepository.findByEmail(request.getEmail())
+        User user = userRepository.findByEmail(request.getEmail())
                 .orElseThrow();
         var jwtToken = jwtService.generateToken(user);
         revokeAllUserTokens((User) user);

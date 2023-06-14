@@ -2,11 +2,12 @@ package com.codecool.backend.security.entity.user;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
-public interface UserRepository extends JpaRepository<UserDetails, Long> {
+public interface UserRepository extends JpaRepository<User, Long> {
 
-    Optional<UserDetails> findByEmail(String email);
+    Optional<User> findByEmail(String email);
 
 }
