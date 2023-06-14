@@ -1,7 +1,7 @@
 package com.codecool.backend.api;
 
-import com.codecool.backend.model.entity.Graduate;
-import com.codecool.backend.model.entity.OfficePersonal;
+import com.codecool.backend.persistence.entity.Graduate;
+import com.codecool.backend.persistence.entity.OfficePersonal;
 import com.codecool.backend.service.welcomepage.WelcomePageService;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;

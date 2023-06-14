@@ -1,4 +1,4 @@
-package com.codecool.backend.model.entity;
+package com.codecool.backend.persistence.entity;
 
 import jakarta.persistence.*;
 

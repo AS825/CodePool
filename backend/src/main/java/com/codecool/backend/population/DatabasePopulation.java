@@ -1,8 +1,8 @@
 package com.codecool.backend.population;
 
 import com.codecool.backend.io.FileReader;
-import com.codecool.backend.model.entity.Graduate;
-import com.codecool.backend.model.entity.OfficePersonal;
+import com.codecool.backend.persistence.entity.Graduate;
+import com.codecool.backend.persistence.entity.OfficePersonal;
 import com.codecool.backend.persistence.entity.Company;
 import com.codecool.backend.persistence.entity.Student;
 import com.codecool.backend.persistence.entity.Technology;

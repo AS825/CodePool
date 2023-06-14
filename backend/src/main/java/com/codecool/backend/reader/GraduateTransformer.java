@@ -1,6 +1,6 @@
 package com.codecool.backend.reader;
 
-import com.codecool.backend.model.entity.Graduate;
+import com.codecool.backend.persistence.entity.Graduate;
 import com.codecool.backend.service.converter.Base64Converter;
 
 import java.io.IOException;
