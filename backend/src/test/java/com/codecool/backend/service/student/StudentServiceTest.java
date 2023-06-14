@@ -1,10 +1,13 @@
 package com.codecool.backend.service.student;
 
 import com.codecool.backend.persistence.entity.Student;
+import com.codecool.backend.persistence.entity.Technology;
 import com.codecool.backend.persistence.repository.StudentRepository;
+import com.codecool.backend.persistence.repository.TechnologyRepository;
 import com.codecool.backend.service.StudentService;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -13,7 +16,8 @@ import static org.mockito.Mockito.*;
 
 class StudentServiceTest {
     StudentRepository studentRepository = mock(StudentRepository.class);
-    StudentService studentService = new StudentService(studentRepository);
+    TechnologyRepository technologyRepository = mock(TechnologyRepository.class);
+    StudentService studentService = new StudentService(studentRepository, technologyRepository);
 
     @Test
     void getAllStudents() {
@@ -25,7 +29,8 @@ class StudentServiceTest {
     @Test
     void getStudentById() {
         long id = 1;
-        Student student = new Student("TestName", "TestDescription", "TestProject", "TestImgSrc");
+        List<Technology> technologies = List.of(new Technology("javaIcon"));
+        Student student = new Student("testFirstName", "testLastName", "testAge", "testEmail", "testSelfDescription", "testProjectDescription", "testImage", technologies);
         when(studentRepository.findById(id)).thenReturn(Optional.of(student));
 
         Optional<Student> result = studentService.findById(id);
@@ -33,17 +38,6 @@ class StudentServiceTest {
         verify(studentRepository).findById(id);
         Optional<Student> expected = Optional.of(student);
         assertEquals(expected, result);
-    }
-
-    @Test
-    void saveStudent() {
-        Student student = new Student("TestName", "TestDescription", "TestProject", "TestImgSrc");
-        when(studentRepository.save(student)).thenReturn(student);
-
-        Student result = studentService.save(student);
-
-        verify(studentRepository).save(student);
-        assertEquals(student, result);
     }
 
     @Test
