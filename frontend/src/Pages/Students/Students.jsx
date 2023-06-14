@@ -9,37 +9,15 @@ import "./Students.css";
 
 function Students() {
   const [students, setStudents] = useState([]);
-  const [currentPage, setCurrentPage] = useState(0);
-  const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   useEffect(() => {
     fetchStudents().then((data) => {
-      setStudents(data?._embedded.students);
+      setStudents(data);
     });
   }, []);
 
-  const loadMoreStudents = () => {
-    if (loading) return;
-    setLoading(true);
-    fetchNextPageOfStudents(currentPage + 1).then((data) => {
-      const newStudents = data?._embedded.students;
-      setStudents((prevStudents) => [...prevStudents, ...newStudents]);
-      setCurrentPage(data?.page.number);
-      setLoading(false);
-    });
-  };
 
-  const handleScroll = () => {
-    const { scrollTop, clientHeight, scrollHeight } = document.documentElement;
-    if (scrollTop + clientHeight >= scrollHeight - 100) {
-      loadMoreStudents();
-    }
-  };
 
   console.log(students);
   return (
@@ -49,7 +27,6 @@ function Students() {
         <h3 className="sub-title">Jobhunters</h3>
       </div>
       <StudentsGrid studentsList={students} />
-      <LoadingAnimation loading={loading} />
     </div>
   );
 }

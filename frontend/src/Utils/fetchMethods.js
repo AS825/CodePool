@@ -55,8 +55,7 @@ export const fetchOfficePersonal = async () => {
 };
 export const fetchStudents = async () => {
   try {
-    const response = await axios.get(path + "api/students");
-    console.log(response.data + "Students!!!!");
+    const response = await axios.get(path + "students");
     return response.data;
   } catch (error) {
     console.error("Error fetching message: ", error);

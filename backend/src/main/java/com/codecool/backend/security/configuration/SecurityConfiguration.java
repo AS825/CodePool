@@ -39,7 +39,7 @@ public class SecurityConfiguration {
                 .authorizeHttpRequests(auth -> {
                     auth.requestMatchers("/api/v1/auth/**", "/h2-console/**").permitAll();
                     auth.requestMatchers(AntPathRequestMatcher.antMatcher("/h2-console/**")).permitAll();
-                    auth.anyRequest().authenticated();
+                    auth.anyRequest().permitAll();
 
                 })
                 .sessionManagement()

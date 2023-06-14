@@ -29,16 +29,16 @@ function StudentCard({ student }) {
     AOS.init({ duration: 1000 });
   }, []);
 
-  const getIdFromHref = () => {
-    const href = student._links.student.href;
-    var regex = /\/(\d+)$/;
-    var match = href.match(regex);
-    if (match) {
-      return match[1];
-    }
-  };
+  // const getIdFromHref = () => {
+  //   const href = student._links.student.href;
+  //   var regex = /\/(\d+)$/;
+  //   var match = href.match(regex);
+  //   if (match) {
+  //     return match[1];
+  //   }
+  // };
 
-  const studentId = getIdFromHref();
+  // const studentId = getIdFromHref();
 
   const bgStyle = {
     cursor: "pointer",
@@ -53,11 +53,11 @@ function StudentCard({ student }) {
     overflow: "hidden",
     borderRadius: "1.5rem",
   };
-  const maxDescriptionLength = 45;
-  const truncatedDescription =
-    student.description.length > maxDescriptionLength
-      ? student.description.substring(0, 30) + "..."
-      : student.description;
+  // const maxDescriptionLength = 45;
+  // const truncatedDescription =
+  //   student.description.length > maxDescriptionLength
+  //     ? student.description.substring(0, 30) + "..."
+  //     : student.description;
 
   const randomEffect = getRandomEffect();
 
@@ -66,16 +66,15 @@ function StudentCard({ student }) {
       <div>
         <article data-aos={randomEffect}>
           <figure style={bgStyle}>
-            <Link to={`/students/${studentId}`}>
+           
               <img
                 className="card-img"
                 src="https://assets.codepen.io/605876/person.png"
                 alt=""
               />
-            </Link>
           </figure>
-          <h2>{student.name}</h2>
-          <p className="student-description">{truncatedDescription}</p>
+          <h2>{student.firstName + " " + student.lastName}</h2>
+          <p className="student-description">{student.email}</p>
         </article>
       </div>
     </>

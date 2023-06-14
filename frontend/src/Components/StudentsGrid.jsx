@@ -3,6 +3,7 @@
 
 import StudentCard from "./StudentCard";
 function StudentsGrid({ studentsList }) {
+  console.log(studentsList);
   return (
     <div className="students__list">
       {studentsList?.map((student, index) => {
