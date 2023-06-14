@@ -42,17 +42,11 @@ public class SecurityConfiguration {
                     auth.anyRequest().authenticated();
 
                 })
-                /*.requestMatchers(AntPathRequestMatcher.antMatcher("/h2-console/**")).permitAll()
-                .anyRequest()*/
-                /*.authenticated()*/
-                /*.and()*/
-                /*.sessionManagement()
+                .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
-                .authenticationProvider(authenticationProvider)*/
-                .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
-        ;
-
+                .authenticationProvider(authenticationProvider)
+                .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
         return http.build();
     }
 

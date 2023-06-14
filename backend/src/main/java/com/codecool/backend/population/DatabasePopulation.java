@@ -52,11 +52,11 @@ public class DatabasePopulation {
             List<OfficePersonal> officePersonal = dataReader.read(officePersonalPath, officePersonalTransformer);
             List<Technology> technologies = dataReader.read(technologiesPath, technologyTransformer);
 
-/*            technologyRepository.saveAll(technologies);
+            technologyRepository.saveAll(technologies);
             companyRepository.saveAll(companies);
             studentRepository.saveAll(students);
             graduateRepository.saveAll(graduates);
-            officePersonalRepository.saveAll(officePersonal);*/
+            officePersonalRepository.saveAll(officePersonal);
 
             RegisterRequest admin = new RegisterRequest(
                     "Admin",
