@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:h2:mem:codepool
+    url: jdbc:h2:mem:testdb
     driver-class-name: org.h2.Driver
-    username: codepool
+    username: sa
     password:
   jpa:
     defer-datasource-initialization: true

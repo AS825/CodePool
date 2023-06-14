@@ -9,12 +9,17 @@ import com.codecool.backend.persistence.entity.Technology;
 import com.codecool.backend.persistence.repository.*;
 import com.codecool.backend.reader.*;
 
+import com.codecool.backend.security.auth.data.RegisterRequest;
+import com.codecool.backend.security.auth.service.AuthenticationService;
+import com.codecool.backend.security.entity.user.Role;
 import com.codecool.backend.service.converter.Base64Converter;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import java.util.List;
+
+import static com.codecool.backend.security.entity.user.Role.ADMIN;
 
 @Configuration
 public class DatabasePopulation {
@@ -25,7 +30,8 @@ public class DatabasePopulation {
             CompanyRepository companyRepository,
             GraduateRepository graduateRepository,
             OfficePersonalRepository officePersonalRepository,
-            TechnologyRepository technologyRepository) {
+            TechnologyRepository technologyRepository,
+            AuthenticationService service) {
         return args -> {
             String companyPath = "src/main/resources/csvFiles/Companies-Mock.csv";
             String studentsPath = "src/main/resources/csvFiles/Students-Mock.csv";
@@ -46,11 +52,19 @@ public class DatabasePopulation {
             List<OfficePersonal> officePersonal = dataReader.read(officePersonalPath, officePersonalTransformer);
             List<Technology> technologies = dataReader.read(technologiesPath, technologyTransformer);
 
-            technologyRepository.saveAll(technologies);
+/*            technologyRepository.saveAll(technologies);
             companyRepository.saveAll(companies);
             studentRepository.saveAll(students);
             graduateRepository.saveAll(graduates);
-            officePersonalRepository.saveAll(officePersonal);
+            officePersonalRepository.saveAll(officePersonal);*/
+
+            RegisterRequest admin = new RegisterRequest(
+                    "Admin",
+                    "admin@mail.com",
+                    "password",
+                    ADMIN
+            );
+            System.out.println("Admin token: " + service.register(admin).getAccessToken());
         };
     }
 }
