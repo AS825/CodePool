@@ -27,7 +27,7 @@ public class StudentTransformer implements DataTransformer<Student> {
         String email = columns[3];
         String selfDescription = columns[4];
         String projectDescription = columns[5];
-        String imgage = columns[6];
+        String imgage = base64Converter.convertImgToBase64String(columns[6]);
         List<Technology> technologies = getTechnologies(columns, INDEX_OF_FIRST_TECH);
         return new Student(firstName, lastName, age, email, selfDescription, projectDescription, imgage, technologies);
     }
