@@ -49,6 +49,14 @@ const Navbar = () => {
           <li>
             <NavLink
               className={isLandingPage ? "link-landing" : "link-not-landing"}
+              to="/students/create"
+            >
+              Create Profile
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className={isLandingPage ? "link-landing" : "link-not-landing"}
               to="/contact"
             >
               Contact
