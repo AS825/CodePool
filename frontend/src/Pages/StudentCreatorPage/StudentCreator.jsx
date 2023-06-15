@@ -8,7 +8,7 @@ const StudentCreator = () => {
   const createStudent = (student) => {
     postStudent(student)
       .then(() => {
-        navigate("/students/create");
+        navigate("/");
         console.log("student: ", student); 
       })
       .catch(error => {
