@@ -69,7 +69,7 @@ function StudentCard({ student }) {
            
               <img
                 className="card-img"
-                src="https://assets.codepen.io/605876/person.png"
+                src={`data:image/png;base64,${student.image}`}
                 alt=""
               />
           </figure>
