@@ -9,19 +9,19 @@ const StudentFormData = ({
   updateFormObject,
 }) => {
   return (
-    <div className="form">
-      <div className="content-2C">
-        <div className="image-section">
+    <div className="sf-form">
+      <div className="sf-content-2C">
+        <div className="sf-image-section">
           {uploadedImage ? (
-            <img src={uploadedImage} className="image" />
+            <img src={uploadedImage} className="sf-image" />
           ) : (
-            <img src="/person.png" className="image" />
+            <img src="/person.png" className="sf-image" />
           )}
         </div>
-        <div className="data-section">
-          <div className="line-container">
+        <div className="sf-data-section">
+          <div className="sf-line-container">
             <input
-              className="input-text"
+              className="sf-input-text"
               type="text"
               value={formObject.firstName}
               onChange={(event) =>
@@ -31,7 +31,7 @@ const StudentFormData = ({
               placeholder="First Name"
             />
             <input
-              className="input-text"
+              className="sf-input-text"
               type="text"
               value={formObject.lastName}
               onChange={(event) =>
@@ -41,9 +41,9 @@ const StudentFormData = ({
               placeholder="Last Name"
             />
           </div>
-          <div className="line-container">
+          <div className="sf-line-container">
             <input
-              className="input-text"
+              className="sf-input-text"
               type="text"
               value={formObject.age}
               onChange={(event) =>
@@ -53,7 +53,7 @@ const StudentFormData = ({
               placeholder="Age"
             />
             <input
-              className="input-text"
+              className="sf-input-text"
               type="email"
               value={formObject.email}
               onChange={(event) =>
@@ -63,9 +63,9 @@ const StudentFormData = ({
               placeholder="E-Mail"
             />
           </div>
-          <div className="line-container">
+          <div className="sf-line-container">
             <textarea
-              className="description-textarea"
+              className="sf-description-textarea"
               value={formObject.selfDescription}
               onChange={(event) =>
                 updateFormObject(event.target.name, event.target.value)
@@ -74,9 +74,9 @@ const StudentFormData = ({
               placeholder="Add a description of yourself and your abilities"
             />
           </div>
-          <div className="line-container">
+          <div className="sf-line-container">
             <textarea
-              className="project-textarea"
+              className="sf-project-textarea"
               value={formObject.projectDescription}
               onChange={(event) =>
                 updateFormObject(event.target.name, event.target.value)
@@ -87,11 +87,11 @@ const StudentFormData = ({
           </div>
         </div>
       </div>
-      <div className="buttons">
-        <button className="button" onClick={() => previous()}>
+      <div className="sf-buttons">
+        <button className="sf-button" onClick={() => previous()}>
           Previous
         </button>
-        <button className="button" onClick={() => next()}>
+        <button className="sf-button" onClick={() => next()}>
           Next
         </button>
       </div>
