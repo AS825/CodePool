@@ -58,11 +58,11 @@ const StudentFormTechStack = ({ previous, formObject, setFormObject, onSubmit, o
         <button className="sf-button" onClick={() => previous()}>
           Previous
         </button>
-        <button className="sf-button" onClick={() => onSubmit(formObject)}>
-          Submit
-        </button>
         <button className="sf-button" onClick={() => onCancel()}>
           Cancel
+        </button>
+        <button className="sf-button" onClick={() => onSubmit(formObject)}>
+          Submit
         </button>
       </div>
     </div>
