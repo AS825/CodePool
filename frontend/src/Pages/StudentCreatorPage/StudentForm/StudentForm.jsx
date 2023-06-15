@@ -101,14 +101,14 @@ const StudentForm = ({ onSubmit, onCancel }) => {
   };
 
   return (
-    <div className="component">
-      <div className="container">
-        <div className="title"> Create your own profile </div>
+    <div className="sf-component">
+      <div className="sf-container">
+        <div className="sf-title"> Create your own profile </div>
         <StudentFormProgressBar
           formSteps={formSteps}
           currentStep={currentStep}
         />
-        <div className="form-container">{renderFormPart()}</div>
+        <div className="sf-form-container">{renderFormPart()}</div>
       </div>
     </div>
   );

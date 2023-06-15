@@ -7,34 +7,34 @@ const StudentFormImageUpload = ({
   onFileUpload,
 }) => {
   return (
-    <div className="form">
-      <div className="form-heading">
+    <div className="sf-form">
+      <div className="sf-form-heading">
         Please upload your image with the transparent background here:
       </div>
-      <div className="content-1C">
-        <div className="image-section">
+      <div className="sf-content-1C">
+        <div className="sf-image-section">
           {uploadedImage ? (
-            <img src={uploadedImage} className="image" />
+            <img src={uploadedImage} className="sf-image" />
           ) : (
-            <img src="/person.png" className="image" />
+            <img src="/person.png" className="sf-image" />
           )}
-          <label htmlFor="image-input" className="image-label">
+          <label htmlFor="image-input" className="sf-image-label">
             Upload Image
             <input
               id="image-input"
               name="image"
               type="file"
-              className="image-input"
+              className="sf-image-input"
               onChange={(event) => onFileUpload(event)}
             />
           </label>
         </div>
       </div>
-      <div className="buttons">
-        <button className="button" onClick={() => previous()}>
+      <div className="sf-buttons">
+        <button className="sf-button" onClick={() => previous()}>
           Previous
         </button>
-        <button className="button" onClick={() => next()}>
+        <button className="sf-button" onClick={() => next()}>
           Next
         </button>
       </div>

@@ -31,12 +31,12 @@ const StudentFormTechStack = ({ previous, formObject, setFormObject, onSubmit, o
   }
 
   return (    
-    <div className="form">
-      <div className="form-heading">
+    <div className="sf-form">
+      <div className="sf-form-heading">
         Please select your Tech-Stack!
       </div>
-      <div className="content-1C">
-        <div className="tech-stack-icons">
+      <div className="sf-content-1C">
+        <div className="sf-tech-stack-icons">
           {technologies.map(technologie => (
             <img
               key={technologie.id}
@@ -48,20 +48,20 @@ const StudentFormTechStack = ({ previous, formObject, setFormObject, onSubmit, o
                 opacity: formObject.technologies.includes(technologie) ? "1" : "0.4",
                 cursor: "pointer",
               }}
-              className="tech-icon"
+              className="sf-tech-icon"
               onClick={() => handleImageSelection(technologie)}
             />
           ))}
         </div>
       </div>
-      <div className="buttons">
-        <button className="button" onClick={() => previous()}>
+      <div className="sf-buttons">
+        <button className="sf-button" onClick={() => previous()}>
           Previous
         </button>
-        <button className="button" onClick={() => onSubmit(formObject)}>
+        <button className="sf-button" onClick={() => onSubmit(formObject)}>
           Submit
         </button>
-        <button className="button" onClick={() => onCancel()}>
+        <button className="sf-button" onClick={() => onCancel()}>
           Cancel
         </button>
       </div>

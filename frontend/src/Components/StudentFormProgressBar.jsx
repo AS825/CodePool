@@ -3,9 +3,9 @@ import "../Pages/StudentCreatorPage/StudentForm/StudentForm.css";
 
 const ProgressBar = ({ formSteps, currentStep }) => {
   return (
-    <ul id="progressbar">
+    <ul id="sf-progressbar">
       {formSteps.map((step, index) => (
-        <li key={index} className={currentStep === index ? "active" : ""}>
+        <li key={index} id="sf-li" className={currentStep === index ? "active" : ""}>
           {step}
         </li>
       ))}
