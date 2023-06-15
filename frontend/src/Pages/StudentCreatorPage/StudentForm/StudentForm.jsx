@@ -47,7 +47,8 @@ const StudentForm = ({ onSubmit, onCancel }) => {
     setUploadedImage(URL.createObjectURL(event.target.files[0]));
     const file = event.target.files[0];
     const base64 = await convertToBase64(file);
-    updateFormObject(event.target.name, base64);
+    const imageBase64 = base64.split(",")[1];
+    updateFormObject(event.target.name, imageBase64);
   };
 
   const convertToBase64 = (file) => {
