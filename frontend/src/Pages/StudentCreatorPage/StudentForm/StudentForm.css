@@ -1,16 +1,11 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-
-.component {
+.sf-component {
   width: 100vw;
   height: 100vh;
   background-color: white;
   position: absolute;
 }
 
-.container {
+.sf-container {
   width: 1200px;
   margin: 50px auto;
   margin-top: 150px;
@@ -21,26 +16,15 @@
   z-index: 2;
 }
 
-.title {
+.sf-title {
   text-align: left;
   font-size: 1.8rem;
   font-weight: 500;
   position: relative;
   margin-bottom: 40px;
 }
-/*
-.title::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -5px;
-  height: 5px;
-  width: 380px;
-  border-radius: 5px;
-  background: linear-gradient(135deg, #71b7e6, #9b59b6);
-}
-*/
-.form {
+
+.sf-form {
   border: 0 none;
   border-radius: 20px;
   box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
@@ -56,7 +40,7 @@
   align-items: center;
 }
 
-.form-heading {
+.sf-form-heading {
   display: flex;
   justify-content: right;
   text-align: right;
@@ -65,7 +49,7 @@
   margin: 0;
 }
 
-.content-1C {
+.sf-content-1C {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -75,7 +59,7 @@
   height: 500px;
 }
 
-.content-2C {
+.sf-content-2C {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -86,69 +70,70 @@
   gap: 100px;
 }
 
-.image-backgroundRemoval {
+.sf-image-backgroundRemoval {
   height: 400px;
 }
 
-.image-section {
+.sf-image-section {
   width: 150px;
   margin-top: 50px;
 }
 
-.tech-icon {
+.sf-tech-icon {
   height: 80px;
 }
 
-.tech-stack-icons {
+.sf-tech-stack-icons {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   gap: 50px;
   justify-items: center;
 }
 
-.icon {
+.sf-icon {
   text-align: center;
 }
 
-.data-section {
+.sf-data-section {
   width: 650px;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-.form-element-heading {
+
+.sf-form-element-heading {
   margin-bottom: 5px;
 }
 
-.line-container {
+.sf-line-container {
   display: flex;
   width: 100%;
   flex-direction: row;
   gap: 15px;
 }
 
-.input-text {
+.sf-input-text {
   flex: 1;
   margin-right: 10px;
 }
 
-.input-text:last-child {
+.sf-input-text:last-child {
   margin-right: 0;
 }
 
-.data-section input,
-.data-section textarea {
+.sf-data-section input,
+.sf-data-section textarea {
   flex-shrink: 0;
 }
 
-.data-section input .data-section textarea {
+.sf-data-section input .sf-data-section textarea {
   border: solid 1px;
   padding: 8px;
   border-radius: 3px;
 }
 
-.data-section input:focus,
-.data-section textarea:focus {
+.sf-data-section input:focus,
+.sf-data-section textarea:focus {
   outline: none;
   border: none;
   -webkit-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.75);
@@ -156,7 +141,7 @@
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
-.data-section input {
+.sf-data-section input {
   margin: 4px 0 8px;
   font-size: 0.9rem;
   color: #282936;
@@ -172,7 +157,7 @@ textarea:not(:placeholder-shown) {
   background-color: rgb(236, 255, 236);
 }
 
-.data-section textarea {
+.sf-data-section textarea {
   border: 1px solid;
   margin: 4px 0 8px;
   font-size: 0.9rem;
@@ -182,8 +167,8 @@ textarea:not(:placeholder-shown) {
   resize: vertical;
 }
 
-.data-section input:last-child,
-.data-section input:last-child {
+.sf-data-section input:last-child,
+.sf-data-section input:last-child {
   margin-right: 0;
 }
 
@@ -201,16 +186,14 @@ input {
   padding-left: 10px;
 }
 
-.form-element {
-}
-
-.buttons {
+.sf-buttons {
   display: flex;
   justify-content: center;
   gap: 50px;
 }
-button,
-.image-label {
+
+.sf-button,
+.sf-image-label {
   height: 25px;
   width: 100px;
   margin: 15px 0;
@@ -224,56 +207,56 @@ button,
   transition: all 0.3s ease;
   background-color: white;
 }
-button:hover {
+.sf-button:hover {
   background: rgb(158, 157, 157);
   color: white;
 }
 
-.image-section {
+.sf-image-section {
   display: flex;
   flex-direction: column;
   justify-content: baseline;
   align-items: center;
 }
 
-.image {
+.sf-image {
   width: 250px;
 }
 
-.image-input {
+.sf-image-input {
   display: none;
 }
 
-.image-label {
+.sf-image-label {
   width: 150px;
 }
 
-.image-label:hover {
+.sf-image-label:hover {
   background-color: #ccc;
 }
 
-.image-preview {
+.sf-image-preview {
   max-width: 200px;
   margin-top: 10px;
 }
 
 /* Progressbar source: http://codepen.io/atakan/pen/gqbIz */
-#progressbar {
+#sf-progressbar {
   margin-bottom: 30px;
   overflow: hidden;
-  /*CSS counters to number the steps*/
   counter-reset: step;
 }
-#progressbar li {
+
+#sf-progressbar #sf-li {
   list-style-type: none;
   color: black;
   text-transform: uppercase;
   font-size: 12px;
-  width: 33.33%;
+  width: 25%;
   float: left;
   position: relative;
 }
-#progressbar li:before {
+#sf-progressbar #sf-li:before {
   content: counter(step);
   counter-increment: step;
   width: 20px;
@@ -286,28 +269,26 @@ button:hover {
   margin: 0 auto 5px auto;
 }
 /*progressbar connectors*/
-#progressbar li:after {
+#sf-progressbar #sf-li:after {
   content: "";
-  width: 120%;
+  width: 100%;
   height: 2px;
   background: #01e9cc;
   position: absolute;
-  left: -70%;
+  left: -50%;
   top: 9px;
-  z-index: -1; /*put it behind the numbers*/
+  z-index: -1; 
 }
-#progressbar li:first-child:after {
-  /*connector not needed before the first step*/
+#sf-progressbar #sf-li:first-child:after {
   content: none;
 }
-/*marking active/completed steps green*/
-/*The number of the step and the connector before it = green*/
-#progressbar li.active ~ li:after {
+
+#sf-progressbar #sf-li.active ~ #sf-li:after {
   background: rgb(161, 160, 160);
   color: black;
 }
 
-#progressbar li.active ~ li:before {
+#sf-progressbar #sf-li.active ~ #sf-li:before {
   background: rgb(161, 160, 160);
   color: black;
 }
