@@ -24,7 +24,9 @@ export const postStudent = async (student) => {
 
 export const getTechnologies = async () => {
   try {
-    const response = await axios.get("http://localhost:8080/technologies");
+    const response = await axios.get("http://localhost:8080/technologies",{
+      headers: { Authorization: localStorage.getItem("access_token") },
+    });
     return response.data;
   } catch (error) {
     console.error("Error fetching message: ", error);
@@ -34,7 +36,9 @@ export const getTechnologies = async () => {
 
 export const fetchGraduates = async () => {
   try {
-    const response = await axios.get(pathGraduates);
+    const response = await axios.get(pathGraduates, {
+      headers: { Authorization: localStorage.getItem("access_token") },
+    });
     console.log(response.data);
     return response.data;
   } catch (error) {
@@ -53,12 +57,14 @@ export const fetchOfficePersonal = async () => {
     throw error;
   }
 };
-export const fetchStudents = async () => {
+export   const fetchStudents = async () => {
   try {
-    const response = await axios.get(path + "students");
+    const response = await axios.get("http://localhost:8080/students", {
+      headers: { Authorization: localStorage.getItem("access_token") },
+    });
     return response.data;
   } catch (error) {
-    console.error("Error fetching message: ", error);
+    console.error("Error fetching students: ", error);
     throw error;
   }
 };
