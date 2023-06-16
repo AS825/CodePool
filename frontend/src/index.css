@@ -11,6 +11,11 @@
   font-family: var(--main-font-family);
 }
 
+a{
+  text-decoration: none;
+  color: #333;
+}
+
 /* --------------------Hide the scrollbar --------------------*/
 body::-webkit-scrollbar {
   width: 0;
@@ -79,4 +84,74 @@ footer {
   right: 0;
   text-align: center;
   z-index: 999;
+}
+
+
+
+/* ------------------------ Dropdown -------------------------------*/
+
+.dropdown-toggle {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-right: 1rem;
+  gap: 1rem;
+  align-items: center;
+  cursor: pointer;
+  width: 15rem;
+}
+
+.arrow {
+  display: flex;
+  z-index: -1;
+}
+
+.img-logout {
+  margin: 0;
+  width: 40px;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  padding-block: 1rem;
+  margin-top: 1px;
+  display: flex;
+  width: 14rem;
+  flex-direction: column;
+  position: absolute;
+  right: 17;
+  background-color: white;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  gap: 1rem;
+  z-index: -1;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.userName {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.edit {
+  width: 1.2rem;
+}
+
+.Logout {
+  color: var(--primary);
+}
+
+.dropdown-item:hover {
+  font-size: 1.2rem;
 }
