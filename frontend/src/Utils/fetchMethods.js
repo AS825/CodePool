@@ -16,7 +16,7 @@ export const fetchMessage = async () => {
 
 export const postStudent = async (student) => {
   try {
-    await axios.post("http://localhost:8080/students", student);
+    await axios.post("http://localhost:8080/students", student, {headers: { Authorization: localStorage.getItem("access_token") }});
   } catch (error) {
     console.error("Error message: ", error);
   }
