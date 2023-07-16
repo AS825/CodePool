@@ -1,6 +1,8 @@
 # CodePool
  A platform facilitating interaction between (CodeCool Austria companies) and their students.
 
+## Features
+Login, Logout, Register, creation of a student profile
 
 ## Git commit messages rules
 
