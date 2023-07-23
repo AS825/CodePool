@@ -33,11 +33,11 @@ public class DatabasePopulation {
             TechnologyRepository technologyRepository,
             AuthenticationService service) {
         return args -> {
-            String companyPath = "src/main/resources/csvFiles/Companies-Mock.csv";
-            String studentsPath = "src/main/resources/csvFiles/Students-Mock.csv";
-            String graduatesPath = "src/main/resources/csvFiles/Graduates.csv";
-            String officePersonalPath = "src/main/resources/csvFiles/OfficePersonal.csv";
-            String technologiesPath = "src/main/resources/csvFiles/Technologies.csv";
+            String companyPath = "backend/src/main/resources/csvFiles/Companies-Mock.csv";
+            String studentsPath = "backend/src/main/resources/csvFiles/Students-Mock.csv";
+            String graduatesPath = "backend/src/main/resources/csvFiles/Graduates.csv";
+            String officePersonalPath = "backend/src/main/resources/csvFiles/OfficePersonal.csv";
+            String technologiesPath = "backend/src/main/resources/csvFiles/Technologies.csv";
             FileReader fileReader = new FileReader();
             DataReader dataReader = new DataReader(fileReader);
             Base64Converter base64Converter = new Base64Converter();

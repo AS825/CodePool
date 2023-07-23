@@ -1,20 +1,20 @@
 firstName,lastName,age,email,selfDescription,projectDescription,imgSrc,technologies,technologies
-Orson,Smith,25,student@mail.com,leo odio condimentum id luctus nec molestie sed justo,Daltfresh,./img/student.png,img/tech2.png,img/tech4.png
-Heinrik,Smith,25,student@mail.com,volutpat sapien arcu sed augue aliquam erat,Otcom,./img/student.png,img/tech1.png,img/tech4.png
-Erhart,Smith,25,student@mail.com,faucibus orci luctus et ultrices,Zontrax,./img/student.png,img/tech3.png,img/tech4.png
-Rebeka,Smith,25,student@mail.com,et magnis dis parturient montes nascetur ridiculus mus vivamus vestibulum sagittis,Sonair,./img/student.png,img/tech1.png,img/tech4.png
-Lyle,Smith,25,student@mail.com,id consequat in consequat ut nulla sed accumsan,Span,./img/student.png,img/tech4.png,img/tech4.png
-Jaine,Smith,25,student@mail.com,amet nulla quisque arcu libero rutrum ac lobortis vel,Greenlam,./img/student.png,img/tech1.png,img/tech4.png
-Rebecka,Smith,25,student@mail.com,ut odio cras mi pede malesuada in imperdiet et commodo vulputate,Mat Lam Tam,./img/student.png,img/tech1.png,img/tech4.png
-Hector,Smith,25,student@mail.com,quam suspendisse potenti nullam porttitor lacus at,Transcof,./img/student.png,img/tech1.png,img/tech4.png
-Augusta,Smith,25,student@mail.com,lacinia sapien quis libero nullam sit amet,Fintone,./img/student.png,img/tech1.png,img/tech4.png
-Barnie,Smith,25,student@mail.com,eu mi nulla ac enim in tempor turpis nec euismod,Matsoft,./img/student.png,img/tech1.png,img/tech4.png
-Chancey,Smith,25,student@mail.com,integer ac leo pellentesque ultrices,Cardguard,./img/student.png,img/tech1.png,img/tech4.png
-Bancroft,Smith,25,student@mail.com,dolor morbi vel lectus in quam fringilla rhoncus,Zaam-Dox,./img/student.png,img/tech1.png,img/tech4.png
-Alethea,Smith,25,student@mail.com,amet diam in magna bibendum imperdiet nullam orci pede venenatis,Sonair,./img/student.png,img/tech1.png,img/tech4.png
-Randy,Smith,25,student@mail.com,risus praesent lectus vestibulum quam sapien varius,Cookley,./img/student.png,img/tech1.png,
-Annabela,Smith,25,student@mail.com,velit vivamus vel nulla eget eros elementum pellentesque quisque porta,Greenlam,./img/student.png,img/tech1.png,img/tech4.png
-Ellwood,Smith,25,student@mail.com,ut suscipit a feugiat et eros,Toughjoyfax,./img/student.png,img/tech1.png,img/tech4.png
-Sylvia,Smith,25,student@mail.com,vestibulum eget vulputate ut ultrices vel augue vestibulum ante ipsum,Solarbreeze,./img/student.png,img/tech1.png,img/tech4.png
-Barnaby,Smith,25,student@mail.com,ac leo pellentesque ultrices mattis odio,Rank,./img/student.png,img/tech1.png,img/tech4.png
-Valene,Smith,25,student@mail.com,odio elementum eu interdum eu tincidunt in leo maecenas pulvinar lobortis est,Trippledex,./img/student.png,img/tech1.png,img/tech4.png
+Orson,Smith,25,student@mail.com,leo odio condimentum id luctus nec molestie sed justo,Daltfresh,backend/img/student.png/,backend/img/tech2.png,backend/img/tech4.png
+Heinrik,Smith,25,student@mail.com,volutpat sapien arcu sed augue aliquam erat,Otcom,backend/img/student.png,backend/img/tech1.png,backend/img/tech4.png
+Erhart,Smith,25,student@mail.com,faucibus orci luctus et ultrices,Zontrax,backend/img/student.png,backend/img/tech3.png,backend/img/tech4.png
+Rebeka,Smith,25,student@mail.com,et magnis dis parturient montes nascetur ridiculus mus vivamus vestibulum sagittis,Sonair,backend/img/student.png,backend/img/tech1.png,backend/img/tech4.png
+Lyle,Smith,25,student@mail.com,id consequat in consequat ut nulla sed accumsan,Span,backend/img/student.png,backend/img/tech4.png,backend/img/tech4.png
+Jaine,Smith,25,student@mail.com,amet nulla quisque arcu libero rutrum ac lobortis vel,Greenlam,backend/img/student.png,backend/img/tech1.png,backend/img/tech4.png
+Rebecka,Smith,25,student@mail.com,ut odio cras mi pede malesuada in imperdiet et commodo vulputate,Mat Lam Tam,backend/img/student.png,backend/img/tech1.png,backend/img/tech4.png
+Hector,Smith,25,student@mail.com,quam suspendisse potenti nullam porttitor lacus at,Transcof,backend/img/student.png,backend/img/tech1.png,backend/img/tech4.png
+Augusta,Smith,25,student@mail.com,lacinia sapien quis libero nullam sit amet,Fintone,backend/img/student.png,backend/img/tech1.png,backend/img/tech4.png
+Barnie,Smith,25,student@mail.com,eu mi nulla ac enim in tempor turpis nec euismod,Matsoft,backend/img/student.png,backend/img/tech1.png,backend/img/tech4.png
+Chancey,Smith,25,student@mail.com,integer ac leo pellentesque ultrices,Cardguard,backend/img/student.png,backend/img/tech1.png,backend/img/tech4.png
+Bancroft,Smith,25,student@mail.com,dolor morbi vel lectus in quam fringilla rhoncus,Zaam-Dox,backend/img/student.png,backend/img/tech1.png,backend/img/tech4.png
+Alethea,Smith,25,student@mail.com,amet diam in magna bibendum imperdiet nullam orci pede venenatis,Sonair,backend/img/student.png,backend/img/tech1.png,backend/img/tech4.png
+Randy,Smith,25,student@mail.com,risus praesent lectus vestibulum quam sapien varius,Cookley,backend/img/student.png,backend/img/tech1.png,backend/img/tech4.png
+Annabela,Smith,25,student@mail.com,velit vivamus vel nulla eget eros elementum pellentesque quisque porta,Greenlam,backend/img/student.png,backend/img/tech1.png,backend/img/tech4.png
+Ellwood,Smith,25,student@mail.com,ut suscipit a feugiat et eros,Toughjoyfax,backend/img/student.png,backend/img/tech1.png,backend/img/tech4.png
+Sylvia,Smith,25,student@mail.com,vestibulum eget vulputate ut ultrices vel augue vestibulum ante ipsum,Solarbreeze,backend/img/student.png,backend/img/tech1.png,backend/img/tech4.png
+Barnaby,Smith,25,student@mail.com,ac leo pellentesque ultrices mattis odio,Rank,backend/img/student.png,backend/img/tech1.png,backend/img/tech4.png
+Valene,Smith,25,student@mail.com,odio elementum eu interdum eu tincidunt in leo maecenas pulvinar lobortis est,Trippledex,backend/img/student.png,backend/img/tech1.png,backend/img/tech4.png
