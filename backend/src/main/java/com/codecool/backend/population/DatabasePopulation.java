@@ -51,7 +51,7 @@ public class DatabasePopulation {
             List<Graduate> graduates = dataReader.read(graduatesPath, graduateTransformer);
             List<OfficePersonal> officePersonal = dataReader.read(officePersonalPath, officePersonalTransformer);
             List<Technology> technologies = dataReader.read(technologiesPath, technologyTransformer);
-
+            //save in database
             technologyRepository.saveAll(technologies);
             companyRepository.saveAll(companies);
             studentRepository.saveAll(students);
