@@ -1,6 +1,11 @@
 # CodePool
  A platform facilitating interaction between (CodeCool Austria companies) and their students.
 
+## Features
+Login, Logout, Register, creation of a student profile
+
+## Built with
+Spring Boot, Spring Security, Java, React, JavaScript, CSS
 
 ## Git commit messages rules
 
