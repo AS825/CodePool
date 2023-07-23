@@ -15,12 +15,12 @@ Create a profile and upload an image
 ![profile](./backend/img/profile.png)
 Choose your Tech Stack
 ![techstack](./backend/img/techstack.png)
-Check out all students their skills and projects
+Partner companies can check out all students, their skills and projects
 ![jobhunters](./backend/img/jobhunters.png)
 
 ## Codesnippets
 
-In the StudentService class the .save() method uses the StudentRepository to save a 
+In the StudentService class the .save() method uses the StudentRepository which extends the JpaRepository interface to save a 
 student with all the data in the database.
 ```js 
 public Student save(Student student) {
