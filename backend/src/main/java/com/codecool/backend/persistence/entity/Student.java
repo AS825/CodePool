@@ -16,7 +16,7 @@ public class Student {
     private String email;
     private String selfDescription;
     private String projectDescription;
-    @Column(length = 1000000)
+    @Column(length = 10000000)
     private String image;
 
     @ManyToMany(cascade = CascadeType.ALL)
