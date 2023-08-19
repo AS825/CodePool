@@ -17,7 +17,7 @@ function ContactPageStudent() {
   }, []);
 
   useEffect(() => {
-    fetchStudent(id).then((data) => {
+    fetchStudent(id.slice(1)).then((data) => {
       setStudent(data);
     });
   }, [id]);
@@ -28,7 +28,7 @@ function ContactPageStudent() {
 
 
   const message = `Sehr geehrte Frau Jescko,
-ich interessiere mich für den Schüler ${student.name}.`;
+ich interessiere mich für den Schüler ${student.firstName} ${student.lastName}.`;
 
 function handleSubmit(e) {
   e.preventDefault(); 
@@ -117,7 +117,7 @@ function handleSubmit(e) {
                 <input
                   type="text"
                   placeholder="Student Name"
-                  defaultValue={student.name}
+                  defaultValue={`${student.firstName} ${student.lastName}`}
                 />
               ) : null}
               <textarea
