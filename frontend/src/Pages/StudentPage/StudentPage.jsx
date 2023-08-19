@@ -33,7 +33,7 @@ function StudentPage() {
     AOS.init({ duration: 1000 });
   }, []);
   useEffect(() => {
-    fetchStudent(id).then((data) => {
+    fetchStudent(id.slice(1)).then((data) => {
       setStudent(data);
     });
   }, [id]);
@@ -49,27 +49,23 @@ function StudentPage() {
           <article data-aos="fade-right" className="article-container">
             <figure style={bgStyle}>
               <img
-                className="card-img-student"
-                src="https://assets.codepen.io/605876/person.png"
-                alt=""
+                  className="card-img-student"
+                  src={`data:image/png;base64,${student.image}`}
+                  alt=""
               />
             </figure>
           </article>
-          <h1 data-aos="fade-left">Name: {student.name}</h1>
+          <h1 data-aos="fade-left">Name: {`${student.firstName} ${student.lastName}`} </h1>
           <table data-aos="zoom-in-up"  className="unstyledTable">
             <thead></thead>
             <tbody>
               <tr>
-                <td className="Uppercase">PROJECT</td>
-                <td className="table-info">{student.project}</td>
-              </tr>
-              <tr>
                 <td className="Uppercase">AGE:</td>
-                <td className="table-info">25</td>
+                <td className="table-info">{student.age}</td>
               </tr>
               <tr>
-                <td className="Uppercase">GENDER:</td>
-                <td className="table-info">male</td>
+                <td className="Uppercase">E-MAIL:</td>
+                <td className="table-info">{student.email}</td>
               </tr>
               {/* <tr>
                 <td className="Uppercase">Mood:</td>
@@ -79,31 +75,13 @@ function StudentPage() {
           </table>
         </div>
         <div data-aos="zoom-in-left" className="student-details-container-right">
-          <h1 className="journey-header"> My Journey</h1>
+          <h1 className="journey-header"> Self Description</h1>
           <span>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum non
-            qui doloremque distinctio similique! Ratione qui tenetur corrupti
-            dicta veniam obcaecati! At quam, porro omnis blanditiis veniam
-            ratione, dicta tenetur impedit alias qui, cum adipisci asperiores
-            amet consequatur laboriosam cupiditate! Quia perspiciatis
-            exercitationem, assumenda eum nulla dolorum est iure veritatis.
-            <br />
-            <br />
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus
-            atque asperiores quisquam beatae accusamus molestias earum. Vero rem
-            libero aliquam veniam nihil enim sapiente odit magnam vitae, ducimus
-            voluptatibus deleniti sequi dicta harum dolor obcaecati quo aperiam
-            non quasi omnis, corrupti sint! Architecto numquam dolorem molestiae
-            earum ea hic mollitia.
+            {student.selfDescription}
           </span>
-          <h1> My Project</h1>
+          <h1> My Projects</h1>
           <span>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum non
-            qui doloremque distinctio similique! Ratione qui tenetur corrupti
-            dicta veniam obcaecati! At quam, porro omnis blanditiis veniam
-            ratione, dicta tenetur impedit alias qui, cum adipisci asperiores
-            amet consequatur laboriosam cupiditate! Quia perspiciatis
-            exercitationem, assumenda eum nulla dolorum est iure veritatis.
+            {student.projectDescription}
             <br />
           </span>
         </div>
