@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -25,6 +25,12 @@ function getRandomEffect() {
 }
 
 function StudentCard({ student }) {
+  const navigate = useNavigate();
+
+  function redirectToStudentPage(studentId) {
+    navigate(`/students/:${studentId}`);
+  }
+
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
@@ -63,7 +69,7 @@ function StudentCard({ student }) {
 
   return (
     <>
-      <div>
+      <div onClick={() => redirectToStudentPage(student.id)}>
         <article data-aos={randomEffect}>
           <figure style={bgStyle}>
            
