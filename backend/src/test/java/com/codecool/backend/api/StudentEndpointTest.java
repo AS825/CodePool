@@ -2,6 +2,9 @@ package com.codecool.backend.api;
 
 import com.codecool.backend.persistence.entity.Student;
 import com.codecool.backend.persistence.entity.Technology;
+import com.codecool.backend.security.configuration.JwtService;
+import com.codecool.backend.security.configuration.SecurityConfiguration;
+import com.codecool.backend.security.token.TokenRepository;
 import com.codecool.backend.service.StudentService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -9,7 +12,10 @@ import org.junit.jupiter.params.provider.ValueSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.context.annotation.Import;
 import org.springframework.http.HttpMethod;
+import org.springframework.security.authentication.AuthenticationProvider;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
@@ -23,14 +29,18 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+@WithMockUser
 @WebMvcTest(StudentEndpoint.class)
+@Import({SecurityConfiguration.class, JwtService.class})
 class StudentEndpointTest {
     @MockBean
     StudentService studentService;
-
+    @MockBean
+    TokenRepository tokenRepository;
+    @MockBean
+    AuthenticationProvider authenticationProvider;
     @Autowired
     MockMvc mockMvc;
-
     String url = "/students";
 
     @Test
